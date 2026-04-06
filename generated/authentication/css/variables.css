@@ -1,0 +1,13 @@
+:root {
+  --c-000000: #000000;
+  --c-ffffff: #ffffff;
+  --c-f8f8f8: #f8f8f8;
+  --c---ba-0-0-0-0-8-: rgba(0,0,0,0.8);
+  --c---ba-0-0-0-0-1-: rgba(0,0,0,0.1);
+  --c-ea4335: #ea4335;
+  --c-fbbc05: #fbbc05;
+  --c-4285f4: #4285f4;
+  --c-34a853: #34a853;
+  --font-inter: 'Inter', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+}

@@ -1,0 +1,236 @@
+.n-6-1006 {
+  width: 294px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
+.n-6-1012 {
+  height: auto;
+  align-self: stretch;
+  flex-shrink: 0;
+  font-family: var(--font-inter);
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.21;
+  white-space: pre-line;
+  color: var(--c---ba-0-0-0-0-8-);
+}
+
+.n-6-1001 {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+.n-I6-1001-6-998 {
+  height: auto;
+  align-self: stretch;
+  flex-shrink: 0;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.22;
+  white-space: pre-line;
+  color: var(--c-000000);
+}
+
+.n-I6-1001-6-995 {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  padding: 11px 12px;
+  background-color: var(--c-ffffff);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.n-I6-1001-6-995-6-993 {
+  width: auto;
+  height: auto;
+  flex-shrink: 0;
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.22;
+  white-space: pre-line;
+  color: var(--c-000000);
+}
+
+.n-6-1007 {
+  height: 65px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+.n-I6-1007-6-998 {
+  height: auto;
+  align-self: stretch;
+  flex-shrink: 0;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.22;
+  white-space: pre-line;
+  color: var(--c-000000);
+}
+
+.n-I6-1007-6-995 {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  padding: 11px 12px;
+  background-color: var(--c-ffffff);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.n-I6-1007-6-995-6-993 {
+  width: auto;
+  height: auto;
+  flex-shrink: 0;
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.22;
+  white-space: pre-line;
+  color: var(--c-000000);
+}
+
+.n-6-1017 {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  padding: 10px;
+  background-color: var(--c-000000);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.n-I6-1017-6-1015 {
+  width: auto;
+  height: auto;
+  flex-shrink: 0;
+  font-family: var(--font-inter);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.21;
+  white-space: pre-line;
+  color: var(--c-ffffff);
+}
+
+.n-6-1023 {
+  height: 0;
+  align-self: stretch;
+  flex-shrink: 0;
+  border: 1px solid var(--c---ba-0-0-0-0-1-);
+}
+
+.n-6-1020 {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  padding: 10px;
+  background-color: var(--c-ffffff);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.n-I6-1020-7-1071 {
+  position: relative;
+  width: 20.8px;
+  height: 20.8px;
+  flex-shrink: 0;
+}
+
+.n-I6-1020-7-1076 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 20.8px;
+  height: 20.8px;
+}
+
+.n-I6-1020-7-1072 {
+  position: absolute;
+  top: 0;
+  left: 1.1px;
+  width: 16.2px;
+  height: 8.3px;
+}
+
+.n-I6-1020-7-1074 {
+  position: absolute;
+  top: 5.7px;
+  left: 0;
+  z-index: 2;
+  width: 4.5px;
+  height: 9.3px;
+}
+
+.n-I6-1020-7-1073 {
+  position: absolute;
+  top: 8.5px;
+  left: 10.4px;
+  z-index: 1;
+  width: 10px;
+  height: 9.8px;
+}
+
+.n-I6-1020-7-1075 {
+  position: absolute;
+  top: 12.5px;
+  left: 1.1px;
+  z-index: 3;
+  width: 16.2px;
+  height: 8.3px;
+}
+
+.n-I6-1020-6-1029 {
+  width: auto;
+  height: auto;
+  flex-shrink: 0;
+  font-family: var(--font-inter);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.21;
+  white-space: pre-line;
+  color: var(--c-000000);
+}
+

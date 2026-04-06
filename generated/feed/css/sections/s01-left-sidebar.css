@@ -1,0 +1,111 @@
+.n-1-4760 {
+  width: 357px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  padding: 10px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.n-1-4773 {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+.n-1-4769 {
+  height: auto;
+  align-self: stretch;
+  flex-shrink: 0;
+  font-family: var(--font-inter);
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.21;
+  white-space: pre-line;
+  color: var(--c---ba-0-0-0-0-8-);
+}
+
+.n-1-4774 {
+  height: auto;
+  align-self: stretch;
+  flex-shrink: 0;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.22;
+  white-space: pre-line;
+  color: var(--c---ba-0-0-0-0-8-);
+}
+
+.n-2-4 {
+  width: 326.5px;
+  height: 0;
+  flex-shrink: 0;
+  border: 1px solid var(--c---ba-0-0-0-0-1-);
+}
+
+.n-5-624 {
+  height: auto;
+  align-self: stretch;
+  flex-shrink: 0;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.22;
+  white-space: pre-line;
+  color: var(--c---ba-0-0-0-0-8-);
+}
+
+.n-2-3 {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+.n-5-626 {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  padding: 10px;
+  background-color: var(--c-ffffff);
+  border-radius: 20px;
+}
+
+.n-5-627 {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.n-1-4771 {
+  height: auto;
+  flex: 1;
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.22;
+  white-space: pre-line;
+  color: var(--c---ba-0-0-0-0-8-);
+}
+
