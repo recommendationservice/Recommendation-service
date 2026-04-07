@@ -1,0 +1,37 @@
+import { z } from "zod"
+
+export const createContentSchema = z.object({
+  externalId: z.string().min(1),
+  type: z.string().min(1),
+  textForEmbedding: z.string().min(1),
+  metadata: z.record(z.string(), z.unknown()).default({}),
+})
+
+export const updateContentSchema = z.object({
+  externalId: z.string().min(1).optional(),
+  type: z.string().min(1).optional(),
+  textForEmbedding: z.string().min(1).optional(),
+  metadata: z.record(z.string(), z.unknown()).optional(),
+})
+
+export const contentIdParam = z.object({
+  id: z.string().uuid(),
+})
+
+export const createEventSchema = z.object({
+  userId: z.string().min(1),
+  contentId: z.string().uuid(),
+  eventType: z.enum(["view", "read", "deep_read", "like", "share", "dislike", "bookmark"]),
+  weight: z.number().int().min(-10).max(10),
+  metadata: z.record(z.string(), z.unknown()).optional().default({}),
+})
+
+export const getEventsQuery = z.object({
+  userId: z.string().min(1),
+})
+
+export const getRecommendationsQuery = z.object({
+  userId: z.string().min(1),
+  type: z.string().optional(),
+  limit: z.coerce.number().int().min(1).max(100).default(20),
+})
