@@ -38,42 +38,8 @@ export function AuthPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#f8f8f8]">
-      <form
-        className="flex w-[294px] flex-col gap-[15px]"
-        onSubmit={(e) => e.preventDefault()}
-      >
+      <div className="flex w-[294px] flex-col gap-[15px]">
         <h1 className="font-inter text-2xl font-black text-black/80">Вхід</h1>
-
-        <label className="flex flex-col gap-1">
-          <span className="font-montserrat text-sm font-medium text-black">
-            Логін
-          </span>
-          <input
-            type="text"
-            placeholder="Input"
-            className="rounded-[10px] bg-white px-3 py-[11px] font-montserrat text-base outline-none"
-          />
-        </label>
-
-        <label className="flex flex-col gap-1">
-          <span className="font-montserrat text-sm font-medium text-black">
-            Пароль
-          </span>
-          <input
-            type="password"
-            placeholder="Input"
-            className="rounded-[10px] bg-white px-3 py-[11px] font-montserrat text-base outline-none"
-          />
-        </label>
-
-        <button
-          type="button"
-          className="w-full rounded-[10px] bg-black p-[10px] font-inter text-base font-medium text-white"
-        >
-          Увійти
-        </button>
-
-        <div className="border-t border-black/10" />
 
         <button
           type="button"
@@ -83,7 +49,7 @@ export function AuthPage() {
           <GoogleIcon />
           Google
         </button>
-      </form>
+      </div>
     </div>
   );
 }
