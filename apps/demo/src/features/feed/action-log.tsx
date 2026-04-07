@@ -9,6 +9,18 @@ type ActionLogProps = {
   actions: ActionEntry[];
 };
 
+function formatActionText(text: string) {
+  const parts = text.split("фільм");
+  if (parts.length === 1) return text;
+  return (
+    <>
+      {parts[0]}
+      <span className="font-bold">фільм</span>
+      {parts[1]}
+    </>
+  );
+}
+
 export function ActionLog({ actions }: ActionLogProps) {
   const lastEntryRef = useRef<HTMLDivElement>(null);
 
@@ -24,12 +36,12 @@ export function ActionLog({ actions }: ActionLogProps) {
           ref={index === actions.length - 1 ? lastEntryRef : undefined}
           className="flex items-center gap-[7px]"
         >
-          <div className="rounded-[5px] bg-[#f8f8f8] p-[5px]">
+          <div className="shrink-0 rounded-[5px] bg-white p-[5px]">
             <Eye size={24} color="black" />
           </div>
-          <p className="font-montserrat text-xs text-black/80">
+          <p className="font-montserrat text-xs leading-[1.22] text-black/80">
             <span className="font-bold">{entry.userName}</span>{" "}
-            {entry.actionText}
+            {formatActionText(entry.actionText)}
           </p>
         </div>
       ))}

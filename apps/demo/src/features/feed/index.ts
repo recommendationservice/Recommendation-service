@@ -1,7 +1,8 @@
-export { FeedPage, parseNameFromEmail } from "./feed-page";
-export { PostCard } from "./post-card";
-export { PostDialog } from "./post-dialog";
+export { FeedContent } from "./feed-content";
+export { FeedPage } from "./feed-page";
+export { MovieCard } from "./movie-card";
+export { MovieDialog } from "./movie-dialog";
 export { ActionLog } from "./action-log";
 export { useFeedState } from "./use-feed-state";
-export { posts } from "./posts-data";
-export type { Post } from "./posts-data";
+export { movies } from "./movies-data";
+export type { Movie } from "./movies-data";

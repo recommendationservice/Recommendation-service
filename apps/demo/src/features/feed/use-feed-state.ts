@@ -35,7 +35,7 @@ export function useFeedState(userName: string) {
           {
             id: crypto.randomUUID(),
             userName,
-            actionText: isLiked ? "прибрав лайк з поста" : "лайкнув пост",
+            actionText: isLiked ? "прибрав лайк з фільму" : "лайкнув фільм",
           },
         ],
       };
@@ -57,8 +57,8 @@ export function useFeedState(userName: string) {
             id: crypto.randomUUID(),
             userName,
             actionText: isBookmarked
-              ? "прибрав закладку з поста"
-              : "додав пост до улюбленого",
+              ? "прибрав закладку з фільму"
+              : "додав фільм до улюбленого",
           },
         ],
       };

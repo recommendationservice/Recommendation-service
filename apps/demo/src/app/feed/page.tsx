@@ -1,47 +1,23 @@
-"use client";
+import { redirect } from "next/navigation";
 
-import { useState } from "react";
+import { FeedContent } from "@/features/feed";
+import { getDisplayName } from "@/shared/lib/get-display-name";
+import { createClient } from "@/shared/lib/supabase-server";
 
-import {
-  ActionLog,
-  FeedPage,
-  parseNameFromEmail,
-  PostCard,
-  PostDialog,
-  posts,
-  useFeedState,
-} from "@/features/feed";
-import type { Post } from "@/features/feed";
+export default async function FeedRoute() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
-export default function FeedRoute() {
-  const userEmail = "user@example.com";
-  const userName = parseNameFromEmail(userEmail);
-
-  const { likes, bookmarks, actions, toggleLike, toggleBookmark } =
-    useFeedState(userName);
-
-  const [selectedPost, setSelectedPost] = useState<Post | null>(null);
+  if (!user) {
+    redirect("/auth");
+  }
 
   return (
-    <FeedPage
-      userEmail={userEmail}
-      actionLog={<ActionLog actions={actions} />}
-    >
-      {posts.map((post) => (
-        <PostCard
-          key={post.id}
-          post={post}
-          liked={likes.has(post.id)}
-          bookmarked={bookmarks.has(post.id)}
-          onLike={() => toggleLike(post.id)}
-          onBookmark={() => toggleBookmark(post.id)}
-          onClick={() => setSelectedPost(post)}
-        />
-      ))}
-      <PostDialog
-        post={selectedPost}
-        onClose={() => setSelectedPost(null)}
-      />
-    </FeedPage>
+    <FeedContent
+      displayName={getDisplayName(user)}
+      avatarUrl={user.user_metadata.avatar_url || null}
+    />
   );
 }

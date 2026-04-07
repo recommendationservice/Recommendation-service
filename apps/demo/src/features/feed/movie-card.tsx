@@ -2,10 +2,10 @@
 
 import { Bookmark, Heart } from "lucide-react";
 
-import type { Post } from "./posts-data";
+import type { Movie } from "./movies-data";
 
-type PostCardProps = {
-  post: Post;
+type MovieCardProps = {
+  movie: Movie;
   liked: boolean;
   bookmarked: boolean;
   onLike: () => void;
@@ -13,14 +13,14 @@ type PostCardProps = {
   onClick: () => void;
 };
 
-export function PostCard({
-  post,
+export function MovieCard({
+  movie,
   liked,
   bookmarked,
   onLike,
   onBookmark,
   onClick,
-}: PostCardProps) {
+}: MovieCardProps) {
   const handleLike = (e: React.MouseEvent) => {
     e.stopPropagation();
     onLike();
@@ -34,24 +34,25 @@ export function PostCard({
   return (
     <article className="flex flex-col gap-[7px] rounded-[10px] bg-white p-[10px]">
       <h2 className="font-inter text-base font-bold leading-[1.21] text-black">
-        {post.title}
+        {movie.title}
       </h2>
       <p className="font-montserrat text-sm leading-[1.22] text-black">
-        {post.preview}
+        {movie.year} · {movie.genre.join(", ")} · ⭐ {movie.rating}
       </p>
-      {post.image && (
-        <img
-          src={post.image}
-          alt={post.title}
-          className="h-[177px] w-full rounded-[10px] object-cover"
-        />
-      )}
+      <img
+        src={movie.posterUrl}
+        alt={movie.title}
+        className="h-[177px] w-full rounded-[10px] object-cover"
+      />
+      <p className="font-montserrat text-sm leading-[1.22] text-black line-clamp-2">
+        {movie.description.split("\n")[0]}
+      </p>
       <div className="flex items-center gap-[5px] rounded-[10px]">
         <button
           onClick={onClick}
           className="flex flex-1 items-center justify-center gap-[10px] overflow-hidden rounded-[10px] bg-black/5 p-[10px] font-inter text-base font-medium leading-[1.21] text-black"
         >
-          Прочитати
+          Переглянути
         </button>
         <button
           onClick={handleLike}

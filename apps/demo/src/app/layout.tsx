@@ -14,12 +14,12 @@ const geistMono = Geist_Mono({
 });
 
 const inter = Inter({
-  variable: "--font-inter",
+  variable: "--font-inter-face",
   subsets: ["latin", "cyrillic"],
 });
 
 const montserrat = Montserrat({
-  variable: "--font-montserrat",
+  variable: "--font-montserrat-face",
   subsets: ["latin", "cyrillic"],
 });
 
