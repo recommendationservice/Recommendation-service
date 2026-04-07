@@ -7,7 +7,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-shrink: 0;
-  padding: 10px;
+  padding: 25px 10px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -88,7 +88,7 @@
   align-items: flex-start;
   flex-shrink: 0;
   padding: 5px;
-  background-color: var(--c-f8f8f8);
+  background-color: var(--c-ffffff);
   border-radius: 5px;
 }
 
@@ -162,7 +162,7 @@
   align-items: flex-start;
   flex-shrink: 0;
   padding: 5px;
-  background-color: var(--c-f8f8f8);
+  background-color: var(--c-ffffff);
   border-radius: 5px;
 }
 
@@ -236,7 +236,7 @@
   align-items: flex-start;
   flex-shrink: 0;
   padding: 5px;
-  background-color: var(--c-f8f8f8);
+  background-color: var(--c-ffffff);
   border-radius: 5px;
 }
 
@@ -310,7 +310,7 @@
   align-items: flex-start;
   flex-shrink: 0;
   padding: 5px;
-  background-color: var(--c-f8f8f8);
+  background-color: var(--c-ffffff);
   border-radius: 5px;
 }
 
@@ -384,7 +384,7 @@
   align-items: flex-start;
   flex-shrink: 0;
   padding: 5px;
-  background-color: var(--c-f8f8f8);
+  background-color: var(--c-ffffff);
   border-radius: 5px;
 }
 
@@ -458,7 +458,7 @@
   align-items: flex-start;
   flex-shrink: 0;
   padding: 5px;
-  background-color: var(--c-f8f8f8);
+  background-color: var(--c-ffffff);
   border-radius: 5px;
 }
 
@@ -532,7 +532,7 @@
   align-items: flex-start;
   flex-shrink: 0;
   padding: 5px;
-  background-color: var(--c-f8f8f8);
+  background-color: var(--c-ffffff);
   border-radius: 5px;
 }
 
@@ -606,7 +606,7 @@
   align-items: flex-start;
   flex-shrink: 0;
   padding: 5px;
-  background-color: var(--c-f8f8f8);
+  background-color: var(--c-ffffff);
   border-radius: 5px;
 }
 
@@ -680,7 +680,7 @@
   align-items: flex-start;
   flex-shrink: 0;
   padding: 5px;
-  background-color: var(--c-f8f8f8);
+  background-color: var(--c-ffffff);
   border-radius: 5px;
 }
 
@@ -754,7 +754,7 @@
   align-items: flex-start;
   flex-shrink: 0;
   padding: 5px;
-  background-color: var(--c-f8f8f8);
+  background-color: var(--c-ffffff);
   border-radius: 5px;
 }
 
@@ -828,7 +828,7 @@
   align-items: flex-start;
   flex-shrink: 0;
   padding: 5px;
-  background-color: var(--c-f8f8f8);
+  background-color: var(--c-ffffff);
   border-radius: 5px;
 }
 
