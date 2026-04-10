@@ -6,21 +6,28 @@ import * as contentService from "../services/content"
 
 const contentRoutes = new Hono()
 
+type ContentRow = Awaited<ReturnType<typeof contentService.createContent>>
+type UpdatedContentRow = Awaited<ReturnType<typeof contentService.updateContent>>
+
+function toContentDto(row: ContentRow) {
+  return {
+    id: row.id,
+    externalId: row.externalId,
+    type: row.type,
+    metadata: row.metadata,
+    isActive: row.isActive,
+    createdAt: row.createdAt,
+  }
+}
+
+function toUpdatedContentDto(row: UpdatedContentRow) {
+  return { ...toContentDto(row), updatedAt: row.updatedAt }
+}
+
 contentRoutes.post("/", validate("json", createContentSchema), async (c) => {
   const data = c.req.valid("json")
   const result = await contentService.createContent(data)
-
-  return c.json(
-    {
-      id: result.id,
-      externalId: result.externalId,
-      type: result.type,
-      metadata: result.metadata,
-      isActive: result.isActive,
-      createdAt: result.createdAt,
-    },
-    201,
-  )
+  return c.json(toContentDto(result), 201)
 })
 
 contentRoutes.put(
@@ -31,16 +38,7 @@ contentRoutes.put(
     const { id } = c.req.valid("param")
     const data = c.req.valid("json")
     const result = await contentService.updateContent(id, data)
-
-    return c.json({
-      id: result.id,
-      externalId: result.externalId,
-      type: result.type,
-      metadata: result.metadata,
-      isActive: result.isActive,
-      createdAt: result.createdAt,
-      updatedAt: result.updatedAt,
-    })
+    return c.json(toUpdatedContentDto(result))
   },
 )
 

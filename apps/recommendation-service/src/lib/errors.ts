@@ -13,43 +13,37 @@ export class AppError extends Error {
   }
 }
 
+const errorBody = (message: string) => ({ error: { message } })
+
 export function errorHandler(err: Error, c: Context) {
   if (err instanceof AppError) {
-    return c.json(
-      { error: { message: err.message } },
-      err.statusCode as ContentfulStatusCode,
-    )
+    return c.json(errorBody(err.message), err.statusCode as ContentfulStatusCode)
   }
 
   if (err instanceof HTTPException) {
-    return c.json(
-      { error: { message: err.message } },
-      err.status,
-    )
+    return c.json(errorBody(err.message), err.status)
   }
 
   console.error("Unhandled error:", err)
-  return c.json(
-    { error: { message: "Internal Server Error" } },
-    500,
-  )
+  return c.json(errorBody("Internal Server Error"), 500)
+}
+
+function buildValidationErrorBody(issues: z.ZodIssue[]) {
+  return {
+    error: {
+      message: "Validation failed",
+      details: issues.map((e) => ({
+        field: e.path.map(String).join("."),
+        message: e.message,
+      })),
+    },
+  }
 }
 
 export function validate<T extends z.ZodType>(target: "json" | "query" | "param", schema: T) {
   return zValidator(target, schema, (result, c) => {
     if (!result.success) {
-      return c.json(
-        {
-          error: {
-            message: "Validation failed",
-            details: result.error.issues.map((e) => ({
-              field: e.path.map(String).join("."),
-              message: e.message,
-            })),
-          },
-        },
-        400,
-      )
+      return c.json(buildValidationErrorBody(result.error.issues), 400)
     }
   })
 }

@@ -5,67 +5,65 @@ import { content } from "../db/schema"
 import { AppError } from "../lib/errors"
 import { generateEmbedding } from "./embedding"
 
-export async function createContent(data: {
+type CreateContentInput = {
   externalId: string
   type: string
   textForEmbedding: string
   metadata: Record<string, unknown>
-}) {
+}
+
+type UpdateContentInput = {
+  externalId?: string
+  type?: string
+  textForEmbedding?: string
+  metadata?: Record<string, unknown>
+}
+
+export async function createContent(data: CreateContentInput) {
   const embedding = await generateEmbedding(data.textForEmbedding)
 
   const [result] = await db
     .insert(content)
-    .values({
-      externalId: data.externalId,
-      type: data.type,
-      textForEmbedding: data.textForEmbedding,
-      metadata: data.metadata,
-      embedding,
-    })
+    .values({ ...data, embedding })
     .returning()
 
   return result
 }
 
-export async function updateContent(
-  id: string,
-  data: {
-    externalId?: string
-    type?: string
-    textForEmbedding?: string
-    metadata?: Record<string, unknown>
-  },
-) {
-  const existing = await db
-    .select()
-    .from(content)
-    .where(eq(content.id, id))
-    .limit(1)
-
-  if (existing.length === 0) {
+async function findContentById(id: string) {
+  const [existing] = await db.select().from(content).where(eq(content.id, id)).limit(1)
+  if (!existing) {
     throw new AppError(404, "Content not found")
   }
+  return existing
+}
 
-  const updateData: Record<string, unknown> = {}
-  if (data.externalId !== undefined) updateData.externalId = data.externalId
-  if (data.type !== undefined) updateData.type = data.type
-  if (data.textForEmbedding !== undefined) updateData.textForEmbedding = data.textForEmbedding
-  if (data.metadata !== undefined) updateData.metadata = data.metadata
+async function buildContentUpdatePatch(
+  data: UpdateContentInput,
+  existing: typeof content.$inferSelect,
+): Promise<Record<string, unknown>> {
+  const patch: Record<string, unknown> = {}
+  if (data.externalId !== undefined) patch.externalId = data.externalId
+  if (data.type !== undefined) patch.type = data.type
+  if (data.textForEmbedding !== undefined) patch.textForEmbedding = data.textForEmbedding
+  if (data.metadata !== undefined) patch.metadata = data.metadata
 
-  if (data.textForEmbedding && data.textForEmbedding !== existing[0].textForEmbedding) {
-    updateData.embedding = await generateEmbedding(data.textForEmbedding)
+  if (data.textForEmbedding && data.textForEmbedding !== existing.textForEmbedding) {
+    patch.embedding = await generateEmbedding(data.textForEmbedding)
   }
 
-  if (Object.keys(updateData).length === 0) {
-    return existing[0]
+  return patch
+}
+
+export async function updateContent(id: string, data: UpdateContentInput) {
+  const existing = await findContentById(id)
+  const patch = await buildContentUpdatePatch(data, existing)
+
+  if (Object.keys(patch).length === 0) {
+    return existing
   }
 
-  const [result] = await db
-    .update(content)
-    .set(updateData)
-    .where(eq(content.id, id))
-    .returning()
-
+  const [result] = await db.update(content).set(patch).where(eq(content.id, id)).returning()
   return result
 }
 
