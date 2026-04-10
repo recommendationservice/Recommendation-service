@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "vercel-build": "next build && drizzle-kit migrate",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
