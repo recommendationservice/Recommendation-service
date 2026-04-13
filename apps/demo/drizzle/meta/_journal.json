@@ -15,6 +15,13 @@
       "when": 1776099215847,
       "tag": "0001_warm_puppet_master",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1776104369812,
+      "tag": "0002_petite_zaran",
+      "breakpoints": true
     }
   ]
 }

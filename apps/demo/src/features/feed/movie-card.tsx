@@ -39,11 +39,13 @@ export function MovieCard({
       <p className="font-montserrat text-sm leading-[1.22] text-black">
         {movie.year} · {movie.genre.join(", ")} · ⭐ {movie.rating}
       </p>
-      <img
-        src={movie.posterUrl}
-        alt={movie.title}
-        className="h-[177px] w-full rounded-[10px] object-cover"
-      />
+      {movie.posterUrl && (
+        <img
+          src={movie.posterUrl}
+          alt={movie.title}
+          className="h-[177px] w-full rounded-[10px] object-cover"
+        />
+      )}
       <p className="font-montserrat text-sm leading-[1.22] text-black line-clamp-2">
         {movie.description.split("\n")[0]}
       </p>

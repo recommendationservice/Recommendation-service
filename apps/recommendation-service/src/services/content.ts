@@ -25,7 +25,17 @@ export async function createContent(data: CreateContentInput) {
   const [result] = await db
     .insert(content)
     .values({ ...data, embedding })
+    .onConflictDoNothing({ target: content.externalId })
     .returning()
+
+  if (!result) {
+    const [existing] = await db
+      .select()
+      .from(content)
+      .where(eq(content.externalId, data.externalId))
+      .limit(1)
+    return existing
+  }
 
   return result
 }

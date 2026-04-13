@@ -4,10 +4,10 @@ export type Movie = {
   year: number;
   genre: string[];
   rating: number;
-  posterUrl: string;
+  posterUrl: string | null;
   description: string;
-  trailerUrl: string;
-  cast: string[];
+  trailerUrl: string | null;
+  cast: string[] | null;
 };
 
 export const movies: Movie[] = [

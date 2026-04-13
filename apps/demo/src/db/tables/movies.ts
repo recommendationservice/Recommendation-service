@@ -3,6 +3,7 @@ import { sql } from "drizzle-orm";
 
 export const movies = pgTable("movies", {
   id: uuid("id").defaultRandom().primaryKey(),
+  tmdbId: integer("tmdb_id").unique(),
   title: text("title").notNull(),
   year: integer("year").notNull(),
   rating: real("rating").notNull(),

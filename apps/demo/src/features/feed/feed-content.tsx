@@ -6,16 +6,16 @@ import { ActionLog } from "./action-log";
 import { FeedPage } from "./feed-page";
 import { MovieCard } from "./movie-card";
 import { MovieDialog } from "./movie-dialog";
-import { movies } from "./movies-data";
 import { useFeedState } from "./use-feed-state";
 import type { Movie } from "./movies-data";
 
 type FeedContentProps = {
   displayName: string;
   avatarUrl: string | null;
+  movies: Movie[];
 };
 
-export function FeedContent({ displayName, avatarUrl }: FeedContentProps) {
+export function FeedContent({ displayName, avatarUrl, movies }: FeedContentProps) {
   const { likes, bookmarks, actions, toggleLike, toggleBookmark } =
     useFeedState(displayName);
 

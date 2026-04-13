@@ -44,26 +44,30 @@ export function MovieDialog({ movie, onClose }: MovieDialogProps) {
           {movie.year} · {movie.genre.join(", ")} · ⭐ {movie.rating}
         </p>
 
-        <div className="mb-4 aspect-video w-full overflow-hidden rounded-[10px]">
-          <iframe
-            src={movie.trailerUrl}
-            title={`${movie.title} — трейлер`}
-            className="h-full w-full"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
+        {movie.trailerUrl && (
+          <div className="mb-4 aspect-video w-full overflow-hidden rounded-[10px]">
+            <iframe
+              src={movie.trailerUrl}
+              title={`${movie.title} — трейлер`}
+              className="h-full w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        )}
 
         <div className="mb-4 font-montserrat text-sm leading-relaxed whitespace-pre-line">
           {movie.description}
         </div>
 
-        <div className="rounded-[10px] bg-black/5 p-3">
-          <p className="mb-1 font-inter text-sm font-bold">Акторський склад</p>
-          <p className="font-montserrat text-sm text-black/80">
-            {movie.cast.join(", ")}
-          </p>
-        </div>
+        {movie.cast && movie.cast.length > 0 && (
+          <div className="rounded-[10px] bg-black/5 p-3">
+            <p className="mb-1 font-inter text-sm font-bold">Акторський склад</p>
+            <p className="font-montserrat text-sm text-black/80">
+              {movie.cast.join(", ")}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
