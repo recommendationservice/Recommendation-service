@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 
-import { createClient } from "@/shared/lib/supabase";
-
 import { ActionLog } from "./action-log";
 import { FeedPage } from "./feed-page";
 import { MovieCard } from "./movie-card";
@@ -24,8 +22,7 @@ export function FeedContent({ displayName, avatarUrl }: FeedContentProps) {
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
 
   const handleLogout = async () => {
-    const supabase = createClient();
-    await supabase.auth.signOut();
+    await fetch("/api/auth/logout", { method: "POST" });
     window.location.href = "/auth";
   };
 

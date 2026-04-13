@@ -1,23 +1,32 @@
+import { eq } from "drizzle-orm";
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
+import { db, profiles } from "@/db";
 import { FeedContent } from "@/features/feed";
-import { getDisplayName } from "@/shared/lib/get-display-name";
-import { createClient } from "@/shared/lib/supabase-server";
+
+const SESSION_COOKIE = "demo-session";
 
 export default async function FeedRoute() {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const cookieStore = await cookies();
+  const sessionId = cookieStore.get(SESSION_COOKIE)?.value;
 
-  if (!user) {
+  if (!sessionId) {
+    redirect("/auth");
+  }
+
+  const profile = await db.query.profiles.findFirst({
+    where: eq(profiles.id, sessionId),
+  });
+
+  if (!profile) {
     redirect("/auth");
   }
 
   return (
     <FeedContent
-      displayName={getDisplayName(user)}
-      avatarUrl={user.user_metadata.avatar_url || null}
+      displayName={profile.displayName}
+      avatarUrl={profile.avatarUrl}
     />
   );
 }

@@ -1,36 +1,28 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, expect, it, vi } from "vitest";
-
-const mockSignInWithPassword = vi.fn();
-const mockSignUp = vi.fn();
-
-vi.mock("@/shared/lib/supabase", () => ({
-  createClient: () => ({
-    auth: {
-      signInWithPassword: mockSignInWithPassword,
-      signUp: mockSignUp,
-    },
-  }),
-}));
+import { describe, expect, it, vi, beforeEach } from "vitest";
 
 import { AuthPage } from "./auth-page";
 
-describe("AuthPage", () => {
-  it("renders email and password inputs", () => {
-    render(<AuthPage />);
+const mockFetch = vi.fn();
+global.fetch = mockFetch;
 
-    expect(screen.getByText("Email")).toBeInTheDocument();
-    expect(screen.getByText("Пароль")).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("email@example.com")).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("••••••••")).toBeInTheDocument();
+describe("AuthPage", () => {
+  beforeEach(() => {
+    mockFetch.mockReset();
   });
 
-  it("renders sign in and sign up buttons", () => {
+  it("renders login input", () => {
+    render(<AuthPage />);
+
+    expect(screen.getByText("Логін")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("Введіть логін")).toBeInTheDocument();
+  });
+
+  it("renders sign in button", () => {
     render(<AuthPage />);
 
     expect(screen.getByText("Увійти")).toBeInTheDocument();
-    expect(screen.getByText("Зареєструватись")).toBeInTheDocument();
   });
 
   it("renders the heading", () => {
@@ -38,89 +30,51 @@ describe("AuthPage", () => {
     expect(screen.getByText("Вхід")).toBeInTheDocument();
   });
 
-  it("allows typing in email and password fields", async () => {
+  it("allows typing in login field", async () => {
     const user = userEvent.setup();
     render(<AuthPage />);
 
-    const emailInput = screen.getByPlaceholderText("email@example.com");
-    const passwordInput = screen.getByPlaceholderText("••••••••");
+    const loginInput = screen.getByPlaceholderText("Введіть логін");
+    await user.type(loginInput, "testuser");
 
-    await user.type(emailInput, "test@example.com");
-    await user.type(passwordInput, "password123");
-
-    expect(emailInput).toHaveValue("test@example.com");
-    expect(passwordInput).toHaveValue("password123");
+    expect(loginInput).toHaveValue("testuser");
   });
 
-  it("calls signInWithPassword on sign in button click", async () => {
-    mockSignInWithPassword.mockResolvedValue({ error: null });
+  it("calls login API on button click", async () => {
+    mockFetch.mockResolvedValue({ ok: true, json: () => ({ ok: true }) });
     const user = userEvent.setup();
     render(<AuthPage />);
 
-    await user.type(
-      screen.getByPlaceholderText("email@example.com"),
-      "test@example.com"
-    );
-    await user.type(screen.getByPlaceholderText("••••••••"), "pass123");
+    await user.type(screen.getByPlaceholderText("Введіть логін"), "testuser");
     await user.click(screen.getByText("Увійти"));
 
-    expect(mockSignInWithPassword).toHaveBeenCalledWith({
-      email: "test@example.com",
-      password: "pass123",
+    expect(mockFetch).toHaveBeenCalledWith("/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ login: "testuser" }),
     });
   });
 
-  it("calls signUp on sign up button click", async () => {
-    mockSignUp.mockResolvedValue({ error: null });
+  it("displays error on failed login", async () => {
+    mockFetch.mockResolvedValue({
+      ok: false,
+      json: () => Promise.resolve({ error: "Something went wrong" }),
+    });
+
     const user = userEvent.setup();
     render(<AuthPage />);
 
-    await user.type(
-      screen.getByPlaceholderText("email@example.com"),
-      "new@example.com"
-    );
-    await user.type(screen.getByPlaceholderText("••••••••"), "newpass");
-    await user.click(screen.getByText("Зареєструватись"));
-
-    expect(mockSignUp).toHaveBeenCalledWith({
-      email: "new@example.com",
-      password: "newpass",
-    });
-  });
-
-  it("displays error message on sign in failure", async () => {
-    mockSignInWithPassword.mockResolvedValue({
-      error: { message: "Invalid credentials" },
-    });
-    const user = userEvent.setup();
-    render(<AuthPage />);
-
-    await user.type(
-      screen.getByPlaceholderText("email@example.com"),
-      "bad@example.com"
-    );
-    await user.type(screen.getByPlaceholderText("••••••••"), "wrong");
+    await user.type(screen.getByPlaceholderText("Введіть логін"), "baduser");
     await user.click(screen.getByText("Увійти"));
-
-    expect(await screen.findByText("Invalid credentials")).toBeInTheDocument();
-  });
-
-  it("displays error message on sign up failure", async () => {
-    mockSignUp.mockResolvedValue({
-      error: { message: "Email already registered" },
-    });
-    const user = userEvent.setup();
-    render(<AuthPage />);
-
-    await user.type(
-      screen.getByPlaceholderText("email@example.com"),
-      "existing@example.com"
-    );
-    await user.type(screen.getByPlaceholderText("••••••••"), "pass");
-    await user.click(screen.getByText("Зареєструватись"));
 
     expect(
-      await screen.findByText("Email already registered")
+      await screen.findByText("Something went wrong")
     ).toBeInTheDocument();
+  });
+
+  it("disables button when login is empty", () => {
+    render(<AuthPage />);
+
+    expect(screen.getByText("Увійти")).toBeDisabled();
   });
 });

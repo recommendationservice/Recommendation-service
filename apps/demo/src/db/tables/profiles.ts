@@ -2,7 +2,8 @@ import { pgTable, uuid, text, timestamp } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
 
 export const profiles = pgTable("profiles", {
-  id: uuid("id").primaryKey(), // references auth.users(id) — managed by Supabase trigger, not FK in Drizzle
+  id: uuid("id").primaryKey().defaultRandom(),
+  login: text("login").unique().notNull(),
   displayName: text("display_name").notNull(),
   avatarUrl: text("avatar_url"),
   bio: text("bio"),
