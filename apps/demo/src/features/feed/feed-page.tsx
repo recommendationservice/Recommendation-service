@@ -18,8 +18,8 @@ export function FeedPage({
   actionLog,
 }: FeedPageProps) {
   return (
-    <div className="flex min-h-screen justify-center bg-[#f8f8f8]">
-      <aside className="flex h-screen w-[357px] flex-col justify-between overflow-hidden px-[10px] py-[25px]">
+    <div className="flex h-screen justify-center overflow-hidden bg-[#f8f8f8]">
+      <aside className="flex h-full w-[357px] flex-col justify-between overflow-hidden px-[10px] py-[25px]">
         <div className="flex flex-col items-center gap-5">
           <h1 className="w-full font-inter text-2xl font-black leading-[1.21] text-black/80">
             Рекомендації
@@ -62,11 +62,11 @@ export function FeedPage({
         </div>
       </aside>
 
-      <main className="flex w-[543px] flex-col justify-end gap-[10px] overflow-hidden border-x border-black/[0.08] px-[10px] py-[25px]">
+      <main className="flex w-[543px] flex-col gap-[10px] overflow-y-auto border-x border-black/[0.08] px-[10px] py-[25px]">
         {children}
       </main>
 
-      <aside className="flex h-screen w-[370px] flex-col gap-[10px] overflow-hidden px-[10px] py-[25px]">
+      <aside className="flex h-full w-[370px] flex-col gap-[10px] overflow-hidden px-[10px] py-[25px]">
         <div className="flex flex-col items-center gap-5">
           <h1 className="w-full font-inter text-2xl font-black leading-[1.21] text-black/80">
             Логування
