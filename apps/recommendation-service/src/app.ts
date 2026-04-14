@@ -7,6 +7,7 @@ import { contentRoutes } from "./routes/content"
 import { eventRoutes } from "./routes/events"
 import { healthRoutes } from "./routes/health"
 import { recommendationRoutes } from "./routes/recommendations"
+import { userRoutes } from "./routes/users"
 
 export function createApp(options?: { basePath?: string }) {
   const base = options?.basePath ?? "/api/v1"
@@ -20,6 +21,7 @@ export function createApp(options?: { basePath?: string }) {
   app.route(`${base}/content`, contentRoutes)
   app.route(`${base}/events`, eventRoutes)
   app.route(`${base}/recommendations`, recommendationRoutes)
+  app.route(`${base}/users`, userRoutes)
 
   return app
 }
