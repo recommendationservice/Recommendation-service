@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { drizzle } from "drizzle-orm/postgres-js";
-import { eq, sql } from "drizzle-orm";
+import { eq, sql, inArray } from "drizzle-orm";
 import postgres from "postgres";
 import { movies } from "./tables/movies";
 import { genres } from "./tables/genres";
@@ -28,7 +28,9 @@ function getConfig() {
   }
   const targetCount = Number(process.env.TMDB_MOVIE_COUNT) || 10_000;
   const skipReco = process.env.SKIP_RECO === "true";
-  return { tmdbApiKey, databaseUrl, targetCount, skipReco };
+  const reseed = process.env.RESEED === "true";
+  const fetchExtras = process.env.FETCH_EXTRAS !== "false";
+  return { tmdbApiKey, databaseUrl, targetCount, skipReco, reseed, fetchExtras };
 }
 
 // --- TMDB API ---
@@ -44,6 +46,16 @@ type TmdbMovie = {
   genre_ids: number[];
 };
 type TmdbResponse = { page: number; total_pages: number; results: TmdbMovie[] };
+
+type TmdbMovieDetails = TmdbMovie & {
+  videos?: { results: { key: string; site: string; type: string; official: boolean }[] };
+  credits?: { cast: { name: string; order: number }[] };
+};
+
+type MovieExtras = {
+  trailerUrl: string | null;
+  cast: string[] | null;
+};
 
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -69,6 +81,33 @@ async function tmdbFetch<T>(path: string, apiKey: string, params: Record<string,
   throw new Error(`TMDB failed after ${MAX_RETRIES} retries for ${path}`);
 }
 
+async function fetchMovieExtras(apiKey: string, tmdbId: number): Promise<MovieExtras> {
+  try {
+    const details = await tmdbFetch<TmdbMovieDetails>(`/movie/${tmdbId}`, apiKey, {
+      append_to_response: "videos,credits",
+    });
+
+    const trailer = details.videos?.results.find(
+      (v) => v.site === "YouTube" && v.type === "Trailer" && v.official,
+    ) ?? details.videos?.results.find(
+      (v) => v.site === "YouTube" && v.type === "Trailer",
+    );
+    const trailerUrl = trailer ? `https://www.youtube.com/embed/${trailer.key}` : null;
+
+    const cast = details.credits?.cast
+      ? details.credits.cast
+          .sort((a, b) => a.order - b.order)
+          .slice(0, 6)
+          .map((c) => c.name)
+      : null;
+
+    return { trailerUrl, cast };
+  } catch (err) {
+    console.warn(`  extras failed for movie ${tmdbId}: ${err}`);
+    return { trailerUrl: null, cast: null };
+  }
+}
+
 async function fetchTmdbGenres(apiKey: string): Promise<Map<number, string>> {
   const data = await tmdbFetch<{ genres: TmdbGenre[] }>("/genre/movie/list", apiKey);
   return new Map(data.genres.map((g) => [g.id, g.name]));
@@ -78,10 +117,19 @@ async function fetchTmdbGenres(apiKey: string): Promise<Map<number, string>> {
 
 type RecoApp = { request: (path: string, init: RequestInit) => Response | Promise<Response> };
 
-async function indexInReco(
-  app: RecoApp,
-  movie: { id: string; title: string; description: string; genreNames: string[] },
-): Promise<boolean> {
+type MovieForReco = {
+  id: string;
+  title: string;
+  year: number;
+  rating: number;
+  posterUrl: string | null;
+  description: string;
+  genreNames: string[];
+  trailerUrl: string | null;
+  cast: string[] | null;
+};
+
+async function indexInReco(app: RecoApp, movie: MovieForReco): Promise<boolean> {
   const textForEmbedding = `${movie.title}. ${movie.description}. Жанри: ${movie.genreNames.join(", ")}.`;
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
@@ -93,30 +141,39 @@ async function indexInReco(
           externalId: movie.id,
           type: "movie",
           textForEmbedding,
-          metadata: { title: movie.title },
+          metadata: {
+            title: movie.title,
+            year: movie.year,
+            rating: movie.rating,
+            posterUrl: movie.posterUrl,
+            description: movie.description,
+            trailerUrl: movie.trailerUrl,
+            cast: movie.cast,
+            genre: movie.genreNames,
+          },
         }),
       });
       if (res.status === 201 || res.status === 200) return true;
       const body = await res.text();
-      if (res.status >= 500 && attempt < MAX_RETRIES) {
-        await sleep(1000 * attempt);
-        continue;
-      }
-      console.warn(`  Reco failed for "${movie.title}": ${res.status} ${body.slice(0, 100)}`);
-      return false;
-    } catch (err) {
+      console.error(`  [attempt ${attempt}/${MAX_RETRIES}] Reco ${res.status} for "${movie.title}": ${body.slice(0, 200)}`);
       if (attempt < MAX_RETRIES) {
         await sleep(1000 * attempt);
         continue;
       }
-      console.warn(`  Reco error for "${movie.title}": ${err}`);
+      return false;
+    } catch (err) {
+      console.error(`  [attempt ${attempt}/${MAX_RETRIES}] Reco error for "${movie.title}": ${err}`);
+      if (attempt < MAX_RETRIES) {
+        await sleep(1000 * attempt);
+        continue;
+      }
       return false;
     }
   }
   return false;
 }
 
-async function indexBatchInReco(app: RecoApp, items: Parameters<typeof indexInReco>[1][]) {
+async function indexBatchInReco(app: RecoApp, items: MovieForReco[]) {
   let indexed = 0;
   for (let i = 0; i < items.length; i += RECO_CONCURRENCY) {
     const chunk = items.slice(i, i + RECO_CONCURRENCY);
@@ -162,7 +219,15 @@ async function insertMovieBatch(
     .insert(movies)
     .values(movieValues)
     .onConflictDoNothing({ target: movies.tmdbId })
-    .returning({ id: movies.id, tmdbId: movies.tmdbId, title: movies.title, description: movies.description });
+    .returning({
+      id: movies.id,
+      tmdbId: movies.tmdbId,
+      title: movies.title,
+      year: movies.year,
+      rating: movies.rating,
+      posterUrl: movies.posterUrl,
+      description: movies.description,
+    });
 
   // Build genre links
   if (inserted.length > 0) {
@@ -190,10 +255,12 @@ async function insertMovieBatch(
       await db.insert(movieGenres).values(genreLinks).onConflictDoNothing();
     }
 
-    // Return inserted movies with their genre names for reco indexing
     return inserted.map((m) => ({
       id: m.id,
       title: m.title,
+      year: m.year,
+      rating: m.rating,
+      posterUrl: m.posterUrl,
       description: m.description,
       genreNames: movieGenreNames.get(m.id) || [],
     }));
@@ -223,6 +290,13 @@ async function main() {
   }
 
   try {
+    if (config.reseed) {
+      console.log("\nRESEED=true — truncating demo + reco tables...");
+      await db.execute(sql`TRUNCATE public.likes, public.bookmarks, public.movie_genres, public.movies, public.genres RESTART IDENTITY CASCADE`);
+      await db.execute(sql`TRUNCATE reco.events, reco.view_history, reco.user_profiles, reco.content RESTART IDENTITY CASCADE`);
+      console.log("  tables truncated");
+    }
+
     // 1. Fetch and seed genres
     console.log("\nFetching TMDB genres...");
     const tmdbGenreMap = await fetchTmdbGenres(config.tmdbApiKey);
@@ -250,11 +324,72 @@ async function main() {
       const insertedMovies = await insertMovieBatch(db, batch, tmdbGenreMap, dbGenreMap);
       totalInserted += insertedMovies.length;
 
-      // Index in reco service immediately
-      if (recoApp && insertedMovies.length > 0) {
-        const toIndex = insertedMovies.filter((m) => m.description.trim().length > 0);
-        const indexed = await indexBatchInReco(recoApp, toIndex);
-        totalIndexed += indexed;
+      // Index ALL movies in reco (not just newly inserted)
+      // Reco's onConflictDoNothing skips duplicates automatically
+      if (recoApp) {
+        const eligible = batch.filter(
+          (m) => m.release_date && (m.overview || "").trim().length > 0,
+        );
+
+        const extrasById = new Map<number, MovieExtras>();
+        if (config.fetchExtras && eligible.length > 0) {
+          for (let i = 0; i < eligible.length; i += RECO_CONCURRENCY) {
+            const chunk = eligible.slice(i, i + RECO_CONCURRENCY);
+            const results = await Promise.all(
+              chunk.map((m) => fetchMovieExtras(config.tmdbApiKey, m.id)),
+            );
+            chunk.forEach((m, idx) => extrasById.set(m.id, results[idx]));
+          }
+        }
+
+        const toIndex: MovieForReco[] = eligible.map((m) => {
+          const extras = extrasById.get(m.id) ?? { trailerUrl: null, cast: null };
+          return {
+            id: "",
+            title: m.title,
+            year: parseInt(m.release_date.slice(0, 4)) || 2000,
+            rating: Math.round(m.vote_average * 10) / 10,
+            posterUrl: m.poster_path ? `${TMDB_IMAGE_BASE}${m.poster_path}` : null,
+            description: m.overview,
+            genreNames: m.genre_ids
+              .map((gid) => tmdbGenreMap.get(gid))
+              .filter(Boolean) as string[],
+            trailerUrl: extras.trailerUrl,
+            cast: extras.cast,
+          };
+        });
+
+        if (toIndex.length > 0) {
+          const tmdbIds = eligible.map((m) => m.id);
+          const dbMovies = await db
+            .select({ id: movies.id, tmdbId: movies.tmdbId })
+            .from(movies)
+            .where(inArray(movies.tmdbId, tmdbIds));
+          const tmdbToUuid = new Map(dbMovies.map((m) => [m.tmdbId!, m.id]));
+
+          const withIds = toIndex
+            .map((m, i) => {
+              const uuid = tmdbToUuid.get(eligible[i].id);
+              if (!uuid) return null;
+              return { ...m, id: uuid };
+            })
+            .filter(Boolean) as MovieForReco[];
+
+          // Also update demo.movies rows with extras
+          if (config.fetchExtras) {
+            for (const m of withIds) {
+              if (m.cast || m.trailerUrl) {
+                await db
+                  .update(movies)
+                  .set({ cast: m.cast, trailerUrl: m.trailerUrl })
+                  .where(eq(movies.id, m.id));
+              }
+            }
+          }
+
+          const indexed = await indexBatchInReco(recoApp, withIds);
+          totalIndexed += indexed;
+        }
       }
     };
 
