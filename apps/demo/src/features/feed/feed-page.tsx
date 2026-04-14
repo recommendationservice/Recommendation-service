@@ -8,6 +8,8 @@ type FeedPageProps = {
 	onLogout: () => void;
 	children: React.ReactNode;
 	actionLog: React.ReactNode;
+	strategyBadge?: React.ReactNode;
+	resetButton?: React.ReactNode;
 };
 
 export function FeedPage({
@@ -16,6 +18,8 @@ export function FeedPage({
 	onLogout,
 	children,
 	actionLog,
+	strategyBadge,
+	resetButton,
 }: FeedPageProps) {
 	return (
 		<div className="flex h-screen justify-center overflow-hidden bg-[#f8f8f8]">
@@ -34,6 +38,7 @@ export function FeedPage({
 						&quot;Програмна система для формування персоналізованих
 						рекомендацій контенту&quot;
 					</p>
+					{strategyBadge}
 				</div>
 				<div className="flex flex-col gap-5">
 					<div className="flex items-center gap-[10px] rounded-[10px] bg-white p-[10px]">
@@ -81,6 +86,7 @@ export function FeedPage({
 				<div className="flex flex-1 flex-col justify-end gap-[10px] overflow-y-auto rounded-[15px] p-[10px] pb-0">
 					{actionLog}
 				</div>
+				{resetButton}
 			</aside>
 		</div>
 	);

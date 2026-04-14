@@ -1,53 +1,45 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
-import { ActionLog } from "./action-log";
+import { ActionLog, type ActionEntry } from "./action-log";
+import { FeedList } from "./feed-list";
 import { FeedPage } from "./feed-page";
-import { MovieCard } from "./movie-card";
-import { MovieDialog } from "./movie-dialog";
-import { useFeedState } from "./use-feed-state";
-import type { Movie } from "./movies-data";
+import { FeedStrategyBadge } from "./feed-strategy-badge";
+import { ResetDemoButton } from "./reset-demo-button";
 
 type FeedContentProps = {
-  displayName: string;
-  avatarUrl: string | null;
-  movies: Movie[];
+	displayName: string;
+	avatarUrl: string | null;
+	login: string;
 };
 
-export function FeedContent({ displayName, avatarUrl, movies }: FeedContentProps) {
-  const { likes, bookmarks, actions, toggleLike, toggleBookmark } =
-    useFeedState(displayName);
+export function FeedContent({ displayName, avatarUrl, login }: FeedContentProps) {
+	const [actions, setActions] = useState<ActionEntry[]>([]);
 
-  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
+	const appendAction = useCallback((entry: ActionEntry) => {
+		setActions((prev) => [...prev, entry]);
+	}, []);
 
-  const handleLogout = async () => {
-    await fetch("/api/auth/logout", { method: "POST" });
-    window.location.href = "/auth";
-  };
+	const handleLogout = async () => {
+		await fetch("/api/auth/logout", { method: "POST" });
+		window.location.href = "/auth";
+	};
 
-  return (
-    <FeedPage
-      displayName={displayName}
-      avatarUrl={avatarUrl}
-      onLogout={handleLogout}
-      actionLog={<ActionLog actions={actions} />}
-    >
-      {movies.map((movie) => (
-        <MovieCard
-          key={movie.id}
-          movie={movie}
-          liked={likes.has(movie.id)}
-          bookmarked={bookmarks.has(movie.id)}
-          onLike={() => toggleLike(movie.id)}
-          onBookmark={() => toggleBookmark(movie.id)}
-          onClick={() => setSelectedMovie(movie)}
-        />
-      ))}
-      <MovieDialog
-        movie={selectedMovie}
-        onClose={() => setSelectedMovie(null)}
-      />
-    </FeedPage>
-  );
+	return (
+		<FeedPage
+			displayName={displayName}
+			avatarUrl={avatarUrl}
+			onLogout={handleLogout}
+			actionLog={<ActionLog actions={actions} />}
+			strategyBadge={<FeedStrategyBadge />}
+			resetButton={<ResetDemoButton login={login} onReset={() => setActions([])} />}
+		>
+			<FeedList
+				login={login}
+				displayName={displayName}
+				onAction={appendAction}
+			/>
+		</FeedPage>
+	);
 }

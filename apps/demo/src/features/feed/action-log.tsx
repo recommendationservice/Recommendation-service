@@ -3,7 +3,11 @@
 import { useEffect, useRef } from "react";
 import { Eye } from "lucide-react";
 
-import type { ActionEntry } from "./use-feed-state";
+export type ActionEntry = {
+  id: string;
+  userName: string;
+  actionText: string;
+};
 
 type ActionLogProps = {
   actions: ActionEntry[];
