@@ -11,7 +11,7 @@ import { initialPreferenceVector, updatePreferenceVector } from "../lib/vector-m
 
 const MAX_EVENTS_PER_QUERY = 100
 
-type Tx = PgTransaction<
+export type Tx = PgTransaction<
   PostgresJsQueryResultHKT,
   typeof schema,
   ExtractTablesWithRelations<typeof schema>
@@ -65,26 +65,29 @@ export async function createEvent(data: CreateEventInput) {
       contentEmbedding: contentItem.embedding,
       eventWeight: data.weight,
     })
-    await upsertViewHistory(tx, profile.id, data.contentId)
+    await upsertViewHistoryBatch(tx, profile.id, [data.contentId])
     return event
   })
 }
 
-async function findOrCreateProfile(tx: Tx, externalUserId: string) {
-  const [existing] = await tx
-    .select()
-    .from(userProfiles)
-    .where(eq(userProfiles.externalUserId, externalUserId))
-    .limit(1)
-
-  if (existing) return existing
-
-  const [created] = await tx.insert(userProfiles).values({ externalUserId }).returning()
-  return created
+export async function findOrCreateProfile(tx: Tx, externalUserId: string) {
+  // Upsert with ON CONFLICT serves dual purpose: creates row if missing,
+  // and acquires a per-user row lock held until transaction commit. This
+  // serializes all per-user reco operations (GET writeback + createEvent)
+  // preventing lost-update and view_history dedup races.
+  const [row] = await tx
+    .insert(userProfiles)
+    .values({ externalUserId })
+    .onConflictDoUpdate({
+      target: userProfiles.externalUserId,
+      set: { lastActiveAt: sql`now()` },
+    })
+    .returning()
+  return row
 }
 
 type PreferenceUpdate = { vector: number[]; totalWeight: number }
-type Profile = typeof userProfiles.$inferSelect
+export type Profile = typeof userProfiles.$inferSelect
 type PreferenceArgs = { profile: Profile; contentEmbedding: number[]; eventWeight: number }
 
 function initialUpdate(args: PreferenceArgs): PreferenceUpdate {
@@ -114,19 +117,20 @@ async function updateUserPreferences(tx: Tx, args: PreferenceArgs) {
     .set({
       preferenceVector: vector,
       totalWeight,
-      totalEvents: profile.totalEvents + 1,
       lastActiveAt: new Date(),
     })
     .where(eq(userProfiles.id, profile.id))
 }
 
-async function upsertViewHistory(tx: Tx, profileId: string, contentId: string) {
+export async function upsertViewHistoryBatch(
+  tx: Tx,
+  profileId: string,
+  contentIds: string[],
+) {
+  if (contentIds.length === 0) return
   await tx
     .insert(viewHistory)
-    .values({
-      userId: profileId,
-      contentId,
-    })
+    .values(contentIds.map((contentId) => ({ userId: profileId, contentId })))
     .onConflictDoUpdate({
       target: [viewHistory.userId, viewHistory.contentId],
       set: {

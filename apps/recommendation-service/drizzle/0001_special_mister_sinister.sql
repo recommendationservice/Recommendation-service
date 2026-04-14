@@ -1,0 +1,1 @@
+ALTER TABLE "reco"."user_profiles" DROP COLUMN "total_events";

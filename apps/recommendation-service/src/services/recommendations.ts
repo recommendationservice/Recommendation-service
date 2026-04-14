@@ -1,7 +1,13 @@
 import { eq, and, desc, sql, notInArray, cosineDistance } from "drizzle-orm";
 
 import { db } from "../db/client";
-import { content, userProfiles, viewHistory, events } from "../db/schema";
+import { content, viewHistory, events } from "../db/schema";
+import {
+  findOrCreateProfile,
+  upsertViewHistoryBatch,
+  type Profile,
+  type Tx,
+} from "./events";
 
 const WARM_USER_THRESHOLD = 5;
 
@@ -16,6 +22,7 @@ type RecommendationItem = {
 type RecommendationResult = {
 	recommendations: RecommendationItem[];
 	strategy: "personalized" | "cold_start";
+	profile: { totalEvents: number };
 };
 
 type QueryParams = { type?: string; limit: number };
@@ -38,21 +45,16 @@ function toRecommendationItem(row: ScoredRow): RecommendationItem {
 	};
 }
 
-type Profile = typeof userProfiles.$inferSelect;
-
-function shouldUsePersonalized(profile: Profile | undefined): boolean {
-	return Boolean(
-		profile?.preferenceVector && profile.totalEvents >= WARM_USER_THRESHOLD,
-	);
+function shouldUsePersonalized(profile: Profile, totalEvents: number): boolean {
+	return Boolean(profile.preferenceVector && totalEvents >= WARM_USER_THRESHOLD);
 }
 
-async function loadProfile(userId: string): Promise<Profile | undefined> {
-	const [profile] = await db
-		.select()
-		.from(userProfiles)
-		.where(eq(userProfiles.externalUserId, userId))
-		.limit(1);
-	return profile;
+async function countUserEvents(tx: Tx, externalUserId: string): Promise<number> {
+	const [row] = await tx
+		.select({ count: sql<number>`count(*)::int` })
+		.from(events)
+		.where(eq(events.userId, externalUserId));
+	return row?.count ?? 0;
 }
 
 type RecoParams = { userId: string; type?: string; limit: number };
@@ -60,19 +62,35 @@ type RecoParams = { userId: string; type?: string; limit: number };
 export async function getRecommendations(
 	params: RecoParams,
 ): Promise<RecommendationResult> {
-	const profile = await loadProfile(params.userId);
-	const viewedContentIds = profile
-		? await getViewedContentIds(profile.id)
-		: [];
-	if (shouldUsePersonalized(profile)) {
-		const vector = profile!.preferenceVector!;
-		return getPersonalizedRecommendations(vector, viewedContentIds, params);
-	}
-	return getColdStartRecommendations(viewedContentIds, params);
+	return db.transaction(async (tx) => {
+		const profile = await findOrCreateProfile(tx, params.userId);
+		const totalEvents = await countUserEvents(tx, params.userId);
+		const personalized = shouldUsePersonalized(profile, totalEvents);
+		const viewedContentIds = await getViewedContentIds(tx, profile.id);
+		const items = personalized
+			? await queryPersonalized(tx, {
+					preferenceVector: profile.preferenceVector!,
+					viewedContentIds,
+					params,
+				})
+			: await queryColdStart(tx, viewedContentIds, params);
+
+		await upsertViewHistoryBatch(
+			tx,
+			profile.id,
+			items.map((item) => item.id),
+		);
+
+		return {
+			recommendations: items.map(toRecommendationItem),
+			strategy: personalized ? "personalized" : "cold_start",
+			profile: { totalEvents },
+		};
+	});
 }
 
-async function getViewedContentIds(profileId: string): Promise<string[]> {
-	const viewed = await db
+async function getViewedContentIds(tx: Tx, profileId: string): Promise<string[]> {
+	const viewed = await tx
 		.select({ contentId: viewHistory.contentId })
 		.from(viewHistory)
 		.where(eq(viewHistory.userId, profileId));
@@ -97,7 +115,6 @@ const contentBaseFields = {
 } as const;
 
 function personalizedConditions(
-	preferenceVector: number[],
 	viewedContentIds: string[],
 	params: QueryParams,
 ) {
@@ -117,13 +134,14 @@ type PersonalizedArgs = {
 	params: QueryParams;
 };
 
-async function queryPersonalized(args: PersonalizedArgs): Promise<ScoredRow[]> {
+async function queryPersonalized(
+	tx: Tx,
+	args: PersonalizedArgs,
+): Promise<ScoredRow[]> {
 	const { preferenceVector, viewedContentIds, params } = args;
 	const similarity = similarityExpr(preferenceVector);
-	const where = and(
-		...personalizedConditions(preferenceVector, viewedContentIds, params),
-	);
-	return db
+	const where = and(...personalizedConditions(viewedContentIds, params));
+	return tx
 		.select({ ...contentBaseFields, score: similarity })
 		.from(content)
 		.where(where)
@@ -131,40 +149,20 @@ async function queryPersonalized(args: PersonalizedArgs): Promise<ScoredRow[]> {
 		.limit(params.limit);
 }
 
-async function getPersonalizedRecommendations(
-	preferenceVector: number[],
-	viewedContentIds: string[],
-	params: QueryParams,
-): Promise<RecommendationResult> {
-	const results = await queryPersonalized({
-		preferenceVector,
-		viewedContentIds,
-		params,
-	});
-	return {
-		recommendations: results.map(toRecommendationItem),
-		strategy: "personalized",
-	};
-}
-
 const coldStartEventCount = sql<number>`COALESCE((
   SELECT COUNT(*)::int FROM ${events}
   WHERE ${events.contentId} = ${content.id} AND ${events.weight} > 0
 ), 0)`;
 
-async function getColdStartRecommendations(
+async function queryColdStart(
+	tx: Tx,
 	viewedContentIds: string[],
 	params: QueryParams,
-): Promise<RecommendationResult> {
-	const results = await db
+): Promise<ScoredRow[]> {
+	return tx
 		.select({ ...contentBaseFields, score: coldStartEventCount })
 		.from(content)
 		.where(and(...baseContentFilters(viewedContentIds, params)))
 		.orderBy(desc(coldStartEventCount), desc(content.createdAt))
 		.limit(params.limit);
-
-	return {
-		recommendations: results.map(toRecommendationItem),
-		strategy: "cold_start",
-	};
 }
