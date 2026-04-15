@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+import { FavCategories } from "./fav-categories";
+
 type FeedPageProps = {
 	displayName: string;
 	avatarUrl: string | null;
@@ -41,6 +43,7 @@ export function FeedPage({
 					{strategyBadge}
 				</div>
 				<div className="flex flex-col gap-5">
+					<FavCategories />
 					<div className="flex items-center gap-[10px] rounded-[10px] bg-white p-[10px]">
 						{avatarUrl ? (
 							<Image

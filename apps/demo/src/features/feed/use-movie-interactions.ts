@@ -8,6 +8,7 @@ import {
 
 import { FEED_QUERY_KEY } from "./feed-constants";
 import type { FeedItem, FeedPage } from "./types";
+import { SCORE_BREAKDOWN_QUERY_KEY } from "./use-score-breakdown";
 
 type InteractionKind = "like" | "bookmark";
 
@@ -141,6 +142,9 @@ export function useMovieInteractions({ userName, onAction }: InteractionsOptions
 			if (context?.previous) {
 				queryClient.setQueryData(FEED_QUERY_KEY, context.previous);
 			}
+		},
+		onSettled: () => {
+			queryClient.invalidateQueries({ queryKey: SCORE_BREAKDOWN_QUERY_KEY });
 		},
 	});
 
