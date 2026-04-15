@@ -45,3 +45,21 @@ export type RecordedEvent = {
 	weight: number;
 	createdAt: string;
 };
+
+export type ScoreBreakdownInput = {
+	externalUserId: string;
+	groupBy: string;
+	limit?: number;
+};
+
+export type ScoreBreakdownItem = {
+	key: string;
+	score: number;
+	events: number;
+};
+
+export type ScoreBreakdownResult = {
+	groupBy: string;
+	items: ScoreBreakdownItem[];
+	totalEvents: number;
+};

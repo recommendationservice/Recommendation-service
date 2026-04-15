@@ -4,6 +4,8 @@ import type {
 	GetRecommendationsResult,
 	RecordedEvent,
 	RecordEventInput,
+	ScoreBreakdownInput,
+	ScoreBreakdownResult,
 } from "./types";
 
 export type RecoClientOptions = {
@@ -17,6 +19,9 @@ export type RecoClient = {
 	) => Promise<GetRecommendationsResult>;
 	recordEvent: (input: RecordEventInput) => Promise<RecordedEvent>;
 	resetUser: (externalUserId: string) => Promise<void>;
+	getScoreBreakdown: (
+		input: ScoreBreakdownInput,
+	) => Promise<ScoreBreakdownResult>;
 };
 
 export function createRecoClient(options: RecoClientOptions): RecoClient {
@@ -72,6 +77,16 @@ export function createRecoClient(options: RecoClientOptions): RecoClient {
 			await request<void>(`/users/${encodeURIComponent(externalUserId)}`, {
 				method: "DELETE",
 			});
+		},
+
+		async getScoreBreakdown(input) {
+			const query = new URLSearchParams({ groupBy: input.groupBy });
+			if (input.limit !== undefined) query.set("limit", String(input.limit));
+			const path = `/users/${encodeURIComponent(input.externalUserId)}/score-breakdown?${query.toString()}`;
+			const result = await request<ScoreBreakdownResult>(path, {
+				method: "GET",
+			});
+			return result as ScoreBreakdownResult;
 		},
 	};
 }

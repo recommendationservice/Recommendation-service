@@ -9,4 +9,7 @@ export type {
 	RecoEventType,
 	RecordEventInput,
 	RecordedEvent,
+	ScoreBreakdownInput,
+	ScoreBreakdownItem,
+	ScoreBreakdownResult,
 } from "./types";
