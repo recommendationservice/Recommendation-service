@@ -13,5 +13,6 @@ export const events = recoSchema.table("events", {
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 }, (table) => [
   index("idx_events_user").on(table.userId, table.createdAt.desc()),
+  index("idx_events_user_content").on(table.userId, table.contentId),
   check("event_type_check", sql`${table.eventType} IN ('view', 'read', 'deep_read', 'like', 'share', 'dislike', 'bookmark')`),
 ]);

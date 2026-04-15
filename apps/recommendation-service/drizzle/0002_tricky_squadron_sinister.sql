@@ -1,0 +1,1 @@
+CREATE INDEX "idx_events_user_content" ON "reco"."events" USING btree ("user_id","content_id");
