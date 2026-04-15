@@ -4,21 +4,19 @@ import type { ScoreBreakdownItem } from "@sp/reco-sdk";
 
 import { useScoreBreakdown } from "./use-score-breakdown";
 
-type CategoryVariant = "primary" | "green" | "yellow" | "empty";
+type RankColor = "cyan" | "green" | "yellow" | null;
 
 type CategoryRow = {
 	label: string;
 	value: number;
-	fillWidth?: number;
-	variant: CategoryVariant;
+	rank: number | null;
+	color: RankColor;
 };
 
-const ROW_WIDTH = 317;
-const BAR_HEIGHT = 34;
-const MAX_ROWS = 4;
+const MAX_ROWS = 5;
 
 export function FavCategories() {
-	const { data, isLoading, isError } = useScoreBreakdown("genre");
+	const { data, isLoading, isFetching, isError } = useScoreBreakdown("genre");
 
 	if (isLoading && !data) return <Shell>{renderSkeleton()}</Shell>;
 	if (isError) return null;
@@ -29,8 +27,10 @@ export function FavCategories() {
 	const rows = buildRows(items);
 	if (rows.length === 0) return null;
 
+	const showRefetchIndicator = isFetching && !isLoading;
+
 	return (
-		<Shell>
+		<Shell refetching={showRefetchIndicator}>
 			{rows.map((row, index) => (
 				<Row key={`${row.label}-${index}`} row={row} />
 			))}
@@ -38,102 +38,100 @@ export function FavCategories() {
 	);
 }
 
-function Shell({ children }: { children: React.ReactNode }) {
+function Shell({
+	children,
+	refetching,
+}: {
+	children: React.ReactNode;
+	refetching?: boolean;
+}) {
 	return (
-		<section className="flex w-[337px] flex-col items-start gap-[7px] overflow-hidden rounded-[10px] bg-white p-[10px]">
+		<section className="relative flex max-w-84.25 w-full flex-col items-start overflow-hidden rounded-[10px] bg-white p-[10px]">
+			{refetching ? <RefetchBar /> : null}
 			<h3 className="font-montserrat text-sm font-bold leading-[1.22] text-black">
 				Улюблені категорії
 			</h3>
-			<p className="self-stretch whitespace-pre-line font-montserrat text-xs font-normal leading-[1.22] text-black">
-				Які категорії фільмів вам будуть рекомендуватись частіше та які ви
+			<p className="mt-1.75 self-stretch whitespace-pre-line font-montserrat text-xs font-normal leading-[1.22] text-black">
+				Які категорії фільмів вам будуть рекомендуватись частіше та з
+				якими ви частіше взаʼємодіяли
 			</p>
 			{children}
 		</section>
 	);
 }
 
-function buildRows(items: ScoreBreakdownItem[]): CategoryRow[] {
-	const top = items.slice(0, MAX_ROWS);
-	const maxAbs = top.reduce((acc, i) => Math.max(acc, Math.abs(i.score)), 0);
-	if (maxAbs === 0) return [];
+function RefetchBar() {
+	return (
+		<div
+			className="pointer-events-none absolute inset-x-0 top-0 h-[2px] overflow-hidden"
+			aria-label="оновлення статистики"
+		>
+			<div className="h-full w-1/3 animate-[fav-refetch_1.2s_ease-in-out_infinite] bg-[#5ccbfb]" />
+		</div>
+	);
+}
 
-	return top.map((item, index) => {
-		const variant = pickVariant(index, item.score);
-		const fillWidth =
-			variant === "green" || variant === "yellow"
-				? Math.round((Math.abs(item.score) / maxAbs) * ROW_WIDTH)
-				: undefined;
+function buildRows(items: ScoreBreakdownItem[]): CategoryRow[] {
+	return items.slice(0, MAX_ROWS).map((item, index) => {
+		const positive = item.score > 0;
 		return {
 			label: item.key,
 			value: item.score,
-			variant,
-			fillWidth,
+			rank: positive && index < 3 ? index + 1 : null,
+			color: positive ? pickColor(index) : null,
 		};
 	});
 }
 
-function pickVariant(index: number, score: number): CategoryVariant {
-	if (score <= 0) return "empty";
-	if (index === 0) return "primary";
+function pickColor(index: number): RankColor {
+	if (index === 0) return "cyan";
 	if (index === 1) return "green";
 	if (index === 2) return "yellow";
-	return "empty";
-}
-
-function renderSkeleton() {
-	return Array.from({ length: MAX_ROWS }).map((_, idx) => (
-		<div
-			key={idx}
-			className="h-[34px] animate-pulse rounded-[5px] bg-[#f8f8f8]"
-			style={{ width: ROW_WIDTH }}
-		/>
-	));
+	return null;
 }
 
 function Row({ row }: { row: CategoryRow }) {
-	const isPrimary = row.variant === "primary";
 	return (
-		<div
-			className={`relative flex items-center justify-between gap-[10px] overflow-hidden rounded-[5px] px-[12px] py-[5px] ${
-				isPrimary ? "bg-[#95c5fb]" : "bg-[#f8f8f8]"
-			}`}
-			style={{ width: ROW_WIDTH }}
-		>
-			{row.fillWidth ? (
-				<div
-					className={`absolute left-0 top-0 ${
-						row.variant === "green" ? "bg-[#bef78c]" : "bg-[#ffe19a]"
-					}`}
-					style={{ width: row.fillWidth, height: BAR_HEIGHT }}
-				/>
-			) : null}
-			<span
-				className={`relative font-montserrat text-sm font-medium leading-[1.22] ${
-					row.variant === "empty" ? "text-black" : "text-black/50"
-				}`}
-			>
-				{row.label}
-			</span>
-			<span
-				className={`relative font-montserrat text-sm font-medium leading-[1.22] ${valueColorClass(
-					row.variant,
-				)}`}
-			>
+		<div className="mx-auto mt-[7px] flex w-full items-center justify-between gap-[10px] overflow-hidden rounded-[5px] bg-[#f8f8f8] px-[12px] py-[5px]">
+			<div className="flex items-center gap-[10px]">
+				{row.rank !== null ? (
+					<span
+						className={`font-montserrat text-sm font-bold leading-[1.22] ${rankColorClass(
+							row.color,
+						)}`}
+					>
+						{row.rank}.
+					</span>
+				) : null}
+				<span className="max-w-[220px] truncate font-montserrat text-sm font-medium leading-[1.22] text-black">
+					{row.label}
+				</span>
+			</div>
+			<span className="font-montserrat text-sm font-medium leading-[1.22] text-black">
 				{row.value}
 			</span>
 		</div>
 	);
 }
 
-function valueColorClass(variant: CategoryVariant) {
-	switch (variant) {
+function rankColorClass(color: RankColor) {
+	switch (color) {
+		case "cyan":
+			return "text-[#5ccbfb]";
 		case "green":
-			return "text-[#7da758]";
+			return "text-[#76ea59]";
 		case "yellow":
-			return "text-[#dfc382]";
-		case "empty":
-			return "text-black";
+			return "text-[#f1d15c]";
 		default:
-			return "text-black/50";
+			return "text-black";
 	}
+}
+
+function renderSkeleton() {
+	return Array.from({ length: MAX_ROWS }).map((_, idx) => (
+		<div
+			key={idx}
+			className="mx-auto mt-[7px] h-[34px] w-[317px] animate-pulse rounded-[5px] bg-[#f8f8f8]"
+		/>
+	));
 }

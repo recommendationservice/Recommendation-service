@@ -42,7 +42,7 @@ export function FeedPage({
 					</p>
 					{strategyBadge}
 				</div>
-				<div className="flex flex-col gap-5">
+				<div className="flex flex-col gap-2">
 					<FavCategories />
 					<div className="flex items-center gap-[10px] rounded-[10px] bg-white p-[10px]">
 						{avatarUrl ? (
