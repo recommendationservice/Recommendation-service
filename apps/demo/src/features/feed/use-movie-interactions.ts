@@ -70,10 +70,19 @@ function applyOptimistic(
 	};
 }
 
+export type InteractionLogKind =
+	| "like"
+	| "unlike"
+	| "bookmark"
+	| "unbookmark";
+
 export type InteractionLogEntry = {
 	id: string;
 	userName: string;
-	actionText: string;
+	kind: InteractionLogKind;
+	verb: string;
+	title: string;
+	detail?: string;
 };
 
 type InteractionsOptions = {
@@ -81,13 +90,18 @@ type InteractionsOptions = {
 	onAction: (entry: InteractionLogEntry) => void;
 };
 
-function actionText(kind: InteractionKind, isOn: boolean, title: string): string {
+function describeAction(
+	kind: InteractionKind,
+	isOn: boolean,
+): { kind: InteractionLogKind; verb: string } {
 	if (kind === "like") {
-		return isOn ? `лайкнув фільм «${title}»` : `прибрав лайк з фільму «${title}»`;
+		return isOn
+			? { kind: "like", verb: "лайкнув фільм" }
+			: { kind: "unlike", verb: "прибрав лайк з фільму" };
 	}
 	return isOn
-		? `додав фільм «${title}» до улюбленого`
-		: `прибрав закладку з фільму «${title}»`;
+		? { kind: "bookmark", verb: "додав до улюбленого фільм" }
+		: { kind: "unbookmark", verb: "прибрав закладку з фільму" };
 }
 
 export function useMovieInteractions({ userName, onAction }: InteractionsOptions) {
@@ -113,14 +127,13 @@ export function useMovieInteractions({ userName, onAction }: InteractionsOptions
 			queryClient.setQueryData<FeedCache>(FEED_QUERY_KEY, (cache) =>
 				applyOptimistic(cache, args.item, args.kind, nextValue),
 			);
+			const described = describeAction(args.kind, nextValue);
 			onAction({
 				id: crypto.randomUUID(),
 				userName,
-				actionText: actionText(
-					args.kind,
-					nextValue,
-					args.item.metadata.title ?? "фільм",
-				),
+				kind: described.kind,
+				verb: described.verb,
+				title: args.item.metadata.title ?? "фільм",
 			});
 			return { previous, nextValue };
 		},
