@@ -149,20 +149,15 @@ async function queryPersonalized(
 		.limit(params.limit);
 }
 
-const coldStartEventCount = sql<number>`COALESCE((
-  SELECT COUNT(*)::int FROM ${events}
-  WHERE ${events.contentId} = ${content.id} AND ${events.weight} > 0
-), 0)`;
-
 async function queryColdStart(
 	tx: Tx,
 	viewedContentIds: string[],
 	params: QueryParams,
 ): Promise<ScoredRow[]> {
 	return tx
-		.select({ ...contentBaseFields, score: coldStartEventCount })
+		.select({ ...contentBaseFields, score: sql<number>`0` })
 		.from(content)
 		.where(and(...baseContentFilters(viewedContentIds, params)))
-		.orderBy(desc(coldStartEventCount), desc(content.createdAt))
+		.orderBy(sql`RANDOM()`)
 		.limit(params.limit);
 }
