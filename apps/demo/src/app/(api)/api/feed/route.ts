@@ -1,7 +1,7 @@
 import { and, eq, inArray } from "drizzle-orm";
 import { NextResponse } from "next/server";
 
-import { db, likes, bookmarks } from "@/db";
+import { db, likes, bookmarks, dislikes } from "@/db";
 import { getRecoClient } from "@/shared/lib/reco-client";
 import { getSessionProfile } from "@/shared/lib/session";
 import type {
@@ -32,7 +32,7 @@ export async function GET(request: Request) {
 	);
 
 	const externalIds = reco.recommendations.map((r) => r.externalId);
-	const [likedIds, bookmarkedIds] = await loadInteractionIds(
+	const [likedIds, bookmarkedIds, dislikedIds] = await loadInteractionIds(
 		profile.id,
 		externalIds,
 	);
@@ -44,6 +44,7 @@ export async function GET(request: Request) {
 		score: r.score,
 		liked: likedIds.has(r.externalId),
 		bookmarked: bookmarkedIds.has(r.externalId),
+		disliked: dislikedIds.has(r.externalId),
 	}));
 
 	const body: FeedPage = {
@@ -67,10 +68,10 @@ function parseLimit(request: Request): number {
 async function loadInteractionIds(
 	profileId: string,
 	movieIds: string[],
-): Promise<[Set<string>, Set<string>]> {
-	if (movieIds.length === 0) return [new Set(), new Set()];
+): Promise<[Set<string>, Set<string>, Set<string>]> {
+	if (movieIds.length === 0) return [new Set(), new Set(), new Set()];
 
-	const [likedRows, bookmarkedRows] = await Promise.all([
+	const [likedRows, bookmarkedRows, dislikedRows] = await Promise.all([
 		db
 			.select({ movieId: likes.movieId })
 			.from(likes)
@@ -84,10 +85,20 @@ async function loadInteractionIds(
 					inArray(bookmarks.movieId, movieIds),
 				),
 			),
+		db
+			.select({ movieId: dislikes.movieId })
+			.from(dislikes)
+			.where(
+				and(
+					eq(dislikes.userId, profileId),
+					inArray(dislikes.movieId, movieIds),
+				),
+			),
 	]);
 
 	return [
 		new Set(likedRows.map((r) => r.movieId)),
 		new Set(bookmarkedRows.map((r) => r.movieId)),
+		new Set(dislikedRows.map((r) => r.movieId)),
 	];
 }

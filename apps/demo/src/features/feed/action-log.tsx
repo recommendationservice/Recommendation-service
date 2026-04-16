@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Bookmark, Eye, Heart } from "lucide-react";
+import { Bookmark, Eye, Heart, ThumbsDown } from "lucide-react";
 
-export type ActionKind = "like" | "unlike" | "bookmark" | "unbookmark" | "view";
+export type ActionKind = "like" | "unlike" | "bookmark" | "unbookmark" | "dislike" | "undislike" | "view";
 
 export type ActionEntry = {
 	id: string;
@@ -44,6 +44,16 @@ const ICONS: Record<ActionKind, IconConfig> = {
 		Icon: Bookmark,
 		bgClass: "bg-action-bookmark-bg",
 		colorVar: "var(--color-action-bookmark)",
+	},
+	dislike: {
+		Icon: ThumbsDown,
+		bgClass: "bg-action-dislike-bg",
+		colorVar: "var(--color-action-dislike)",
+	},
+	undislike: {
+		Icon: ThumbsDown,
+		bgClass: "bg-action-dislike-bg",
+		colorVar: "var(--color-action-dislike)",
 	},
 	view: {
 		Icon: Eye,

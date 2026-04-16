@@ -40,7 +40,7 @@ export function FeedList({ login, displayName, onAction }: FeedListProps) {
 		onIntersect: fetchNextPage,
 	});
 
-	const { toggleLike, toggleBookmark } = useMovieInteractions({
+	const { toggleLike, toggleBookmark, toggleDislike } = useMovieInteractions({
 		userName: displayName,
 		onAction,
 	});
@@ -68,8 +68,10 @@ export function FeedList({ login, displayName, onAction }: FeedListProps) {
 						movie={movie}
 						liked={item.liked}
 						bookmarked={item.bookmarked}
+						disliked={item.disliked}
 						onLike={() => toggleLike(item)}
 						onBookmark={() => toggleBookmark(item)}
+						onDislike={() => toggleDislike(item)}
 						onClick={() => setSelectedMovie(movie)}
 					/>
 				);

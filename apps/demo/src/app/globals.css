@@ -54,6 +54,8 @@
   --color-action-bookmark-bg: rgba(255, 204, 0, 0.1);
   --color-action-view: #000000;
   --color-action-view-bg: rgba(0, 0, 0, 0.05);
+  --color-action-dislike: #888888;
+  --color-action-dislike-bg: rgba(0, 0, 0, 0.05);
 }
 
 :root {

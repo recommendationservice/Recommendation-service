@@ -22,8 +22,10 @@ describe("MovieCard", () => {
     movie: testMovie,
     liked: false,
     bookmarked: false,
+    disliked: false,
     onLike: vi.fn(),
     onBookmark: vi.fn(),
+    onDislike: vi.fn(),
     onClick: vi.fn(),
   };
 
@@ -106,6 +108,33 @@ describe("MovieCard", () => {
     await user.click(buttons[2]);
 
     expect(onBookmark).toHaveBeenCalledOnce();
+    expect(onClick).not.toHaveBeenCalled();
+  });
+
+  it("calls onDislike when dislike button is clicked", async () => {
+    const onDislike = vi.fn();
+    const user = userEvent.setup();
+    render(<MovieCard {...defaultProps} onDislike={onDislike} />);
+
+    const buttons = screen.getAllByRole("button");
+    const dislikeButton = buttons[3];
+    await user.click(dislikeButton);
+
+    expect(onDislike).toHaveBeenCalledOnce();
+  });
+
+  it("does not propagate dislike click to onClick", async () => {
+    const onClick = vi.fn();
+    const onDislike = vi.fn();
+    const user = userEvent.setup();
+    render(
+      <MovieCard {...defaultProps} onClick={onClick} onDislike={onDislike} />
+    );
+
+    const buttons = screen.getAllByRole("button");
+    await user.click(buttons[3]);
+
+    expect(onDislike).toHaveBeenCalledOnce();
     expect(onClick).not.toHaveBeenCalled();
   });
 });

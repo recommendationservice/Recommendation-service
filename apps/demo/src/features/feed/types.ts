@@ -5,6 +5,7 @@ export type FeedItem = {
 	score: number;
 	liked: boolean;
 	bookmarked: boolean;
+	disliked: boolean;
 };
 
 export type FeedItemMetadata = {

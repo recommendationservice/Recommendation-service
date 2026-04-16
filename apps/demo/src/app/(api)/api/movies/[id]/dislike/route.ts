@@ -1,7 +1,7 @@
 import { and, eq } from "drizzle-orm";
 import { NextResponse } from "next/server";
 
-import { db, likes, dislikes } from "@/db";
+import { db, dislikes, likes } from "@/db";
 import { getRecoClient } from "@/shared/lib/reco-client";
 import { getSessionProfile } from "@/shared/lib/session";
 
@@ -16,26 +16,30 @@ export async function POST(request: Request, ctx: RouteContext) {
 	const { contentId } = (await request.json()) as { contentId?: string };
 	if (!contentId) return badRequest("contentId is required");
 
-	console.log(`[like:POST] user=${profile.login} movie=${movieId} content=${contentId}`);
+	console.log(`[dislike:POST] user=${profile.login} movie=${movieId} content=${contentId}`);
 
 	const tDb = Date.now();
-	await db.delete(dislikes).where(and(eq(dislikes.userId, profile.id), eq(dislikes.movieId, movieId)));
+	await db.delete(likes).where(and(eq(likes.userId, profile.id), eq(likes.movieId, movieId)));
 	await db
-		.insert(likes)
+		.insert(dislikes)
 		.values({ userId: profile.id, movieId })
 		.onConflictDoNothing();
-	console.log(`[like:POST]   demo.likes insert in ${Date.now() - tDb}ms`);
+	console.log(`[dislike:POST]   demo.dislikes insert in ${Date.now() - tDb}ms`);
 
 	const tReco = Date.now();
-	await forwardEvent({
-		userId: profile.id,
-		contentId,
-		eventType: "like",
-		weight: 5,
-	});
-	console.log(`[like:POST]   reco.recordEvent in ${Date.now() - tReco}ms`);
+	try {
+		await getRecoClient().recordEvent({
+			userId: profile.id,
+			contentId,
+			eventType: "dislike",
+			weight: -5,
+		});
+		console.log(`[dislike:POST]   reco.recordEvent in ${Date.now() - tReco}ms`);
+	} catch (error) {
+		console.error("[dislike:POST]   reco.recordEvent failed", error);
+	}
 
-	console.log(`[like:POST] done in ${Date.now() - t0}ms`);
+	console.log(`[dislike:POST] done in ${Date.now() - t0}ms`);
 	return NextResponse.json({ ok: true });
 }
 
@@ -45,27 +49,14 @@ export async function DELETE(_request: Request, ctx: RouteContext) {
 	if (!profile) return unauthorized();
 
 	const { id: movieId } = await ctx.params;
-	console.log(`[like:DELETE] user=${profile.login} movie=${movieId}`);
+	console.log(`[dislike:DELETE] user=${profile.login} movie=${movieId}`);
 	await db
-		.delete(likes)
-		.where(and(eq(likes.userId, profile.id), eq(likes.movieId, movieId)));
-	console.log(`[like:DELETE] done in ${Date.now() - t0}ms`);
+		.delete(dislikes)
+		.where(
+			and(eq(dislikes.userId, profile.id), eq(dislikes.movieId, movieId)),
+		);
+	console.log(`[dislike:DELETE] done in ${Date.now() - t0}ms`);
 	return NextResponse.json({ ok: true });
-}
-
-type ForwardEventArgs = {
-	userId: string;
-	contentId: string;
-	eventType: "like" | "bookmark" | "dislike";
-	weight: number;
-};
-
-async function forwardEvent(args: ForwardEventArgs): Promise<void> {
-	try {
-		await getRecoClient().recordEvent(args);
-	} catch (error) {
-		console.error("[like:POST]   reco.recordEvent failed", error);
-	}
 }
 
 function unauthorized() {

@@ -10,7 +10,7 @@ import { FEED_QUERY_KEY } from "./feed-constants";
 import type { FeedItem, FeedPage } from "./types";
 import { SCORE_BREAKDOWN_QUERY_KEY } from "./use-score-breakdown";
 
-type InteractionKind = "like" | "bookmark";
+type InteractionKind = "like" | "bookmark" | "dislike";
 
 type ToggleArgs = {
 	item: FeedItem;
@@ -21,6 +21,12 @@ type MutationContext = {
 	previous?: InfiniteData<FeedPage, number>;
 	nextValue: boolean;
 };
+
+function currentValue(item: FeedItem, kind: InteractionKind): boolean {
+	if (kind === "like") return item.liked;
+	if (kind === "dislike") return item.disliked;
+	return item.bookmarked;
+}
 
 async function apiToggle({ item, kind }: ToggleArgs, isOn: boolean): Promise<void> {
 	const method = isOn ? "POST" : "DELETE";
@@ -49,16 +55,25 @@ function applyOptimistic(
 	nextValue: boolean,
 ): FeedCache | undefined {
 	if (!cache) return cache;
-	const delta = nextValue ? +1 : 0; // only POST contributes to totalEvents
+	const delta = nextValue ? +1 : 0;
 	const lastIndex = cache.pages.length - 1;
 	return {
 		...cache,
 		pages: cache.pages.map((page, idx) => {
-			const items = page.items.map((it) =>
-				it.externalId === item.externalId
-					? { ...it, [kind === "like" ? "liked" : "bookmarked"]: nextValue }
-					: it,
-			);
+			const items = page.items.map((it) => {
+				if (it.externalId !== item.externalId) return it;
+				const patch: Partial<FeedItem> = {};
+				if (kind === "like") {
+					patch.liked = nextValue;
+					if (nextValue) patch.disliked = false;
+				} else if (kind === "dislike") {
+					patch.disliked = nextValue;
+					if (nextValue) patch.liked = false;
+				} else {
+					patch.bookmarked = nextValue;
+				}
+				return { ...it, ...patch };
+			});
 			if (idx === lastIndex && delta > 0) {
 				return {
 					...page,
@@ -75,7 +90,9 @@ export type InteractionLogKind =
 	| "like"
 	| "unlike"
 	| "bookmark"
-	| "unbookmark";
+	| "unbookmark"
+	| "dislike"
+	| "undislike";
 
 export type InteractionLogEntry = {
 	id: string;
@@ -100,6 +117,11 @@ function describeAction(
 			? { kind: "like", verb: "лайкнув фільм" }
 			: { kind: "unlike", verb: "прибрав лайк з фільму" };
 	}
+	if (kind === "dislike") {
+		return isOn
+			? { kind: "dislike", verb: "відхилив фільм" }
+			: { kind: "undislike", verb: "прибрав відхилення з фільму" };
+	}
 	return isOn
 		? { kind: "bookmark", verb: "додав до улюбленого фільм" }
 		: { kind: "unbookmark", verb: "прибрав закладку з фільму" };
@@ -115,7 +137,7 @@ export function useMovieInteractions({ userName, onAction }: InteractionsOptions
 		MutationContext
 	>({
 		mutationFn: async (args) => {
-			const current = args.kind === "like" ? args.item.liked : args.item.bookmarked;
+			const current = currentValue(args.item, args.kind);
 			const nextValue = !current;
 			await apiToggle(args, nextValue);
 			return { args, nextValue };
@@ -123,7 +145,7 @@ export function useMovieInteractions({ userName, onAction }: InteractionsOptions
 		onMutate: async (args) => {
 			await queryClient.cancelQueries({ queryKey: FEED_QUERY_KEY });
 			const previous = queryClient.getQueryData<FeedCache>(FEED_QUERY_KEY);
-			const current = args.kind === "like" ? args.item.liked : args.item.bookmarked;
+			const current = currentValue(args.item, args.kind);
 			const nextValue = !current;
 			queryClient.setQueryData<FeedCache>(FEED_QUERY_KEY, (cache) =>
 				applyOptimistic(cache, args.item, args.kind, nextValue),
@@ -151,5 +173,6 @@ export function useMovieInteractions({ userName, onAction }: InteractionsOptions
 	return {
 		toggleLike: (item: FeedItem) => mutation.mutate({ item, kind: "like" }),
 		toggleBookmark: (item: FeedItem) => mutation.mutate({ item, kind: "bookmark" }),
+		toggleDislike: (item: FeedItem) => mutation.mutate({ item, kind: "dislike" }),
 	};
 }
