@@ -5,10 +5,12 @@ import { genres } from "./tables/genres";
 import { movieGenres } from "./tables/movie-genres";
 import { likes } from "./tables/likes";
 import { bookmarks } from "./tables/bookmarks";
+import { dislikes } from "./tables/dislikes";
 
 export const profilesRelations = relations(profiles, ({ many }) => ({
   likes: many(likes),
   bookmarks: many(bookmarks),
+  dislikes: many(dislikes),
 }));
 
 export const genresRelations = relations(genres, ({ many }) => ({
@@ -19,6 +21,7 @@ export const moviesRelations = relations(movies, ({ many }) => ({
   movieGenres: many(movieGenres),
   likes: many(likes),
   bookmarks: many(bookmarks),
+  dislikes: many(dislikes),
 }));
 
 export const movieGenresRelations = relations(movieGenres, ({ one }) => ({
@@ -34,4 +37,9 @@ export const likesRelations = relations(likes, ({ one }) => ({
 export const bookmarksRelations = relations(bookmarks, ({ one }) => ({
   user: one(profiles, { fields: [bookmarks.userId], references: [profiles.id] }),
   movie: one(movies, { fields: [bookmarks.movieId], references: [movies.id] }),
+}));
+
+export const dislikesRelations = relations(dislikes, ({ one }) => ({
+  user: one(profiles, { fields: [dislikes.userId], references: [profiles.id] }),
+  movie: one(movies, { fields: [dislikes.movieId], references: [movies.id] }),
 }));

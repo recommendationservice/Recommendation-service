@@ -22,6 +22,13 @@
       "when": 1776104369812,
       "tag": "0002_petite_zaran",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1776323291138,
+      "tag": "0003_lean_ares",
+      "breakpoints": true
     }
   ]
 }

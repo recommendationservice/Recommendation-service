@@ -4,4 +4,5 @@ export { movies } from "./tables/movies";
 export { movieGenres } from "./tables/movie-genres";
 export { likes } from "./tables/likes";
 export { bookmarks } from "./tables/bookmarks";
+export { dislikes } from "./tables/dislikes";
 export * from "./relations";
