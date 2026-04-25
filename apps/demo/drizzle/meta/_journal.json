@@ -29,6 +29,13 @@
       "when": 1776323291138,
       "tag": "0003_lean_ares",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1777115101978,
+      "tag": "0004_high_romulus",
+      "breakpoints": true
     }
   ]
 }
