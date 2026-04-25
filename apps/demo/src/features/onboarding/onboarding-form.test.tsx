@@ -73,6 +73,12 @@ describe("OnboardingForm — Typing state", () => {
   });
 });
 
+const ENRICHMENT_FIXTURE = {
+  paragraph: "Тобі подобаються трилери, наповнені напругою.",
+  genres: ["thriller", "drama"],
+  similarTitles: ["Se7en", "Zodiac"],
+};
+
 describe("OnboardingForm — Submitting state (REQ-15, REQ-12 double-submit)", () => {
   it("shows 'Thinking about your taste...' and disables submit while pending", async () => {
     let resolveFetch: (r: Response) => void = () => {};
@@ -90,12 +96,12 @@ describe("OnboardingForm — Submitting state (REQ-15, REQ-12 double-submit)", (
     expect(screen.getByRole("button", { name: /надіслати/i })).toBeDisabled();
     expect(screen.getByLabelText(/пропустити/i)).toBeDisabled();
 
-    resolveFetch(jsonResponse(200, { ok: true, enrichedText: "..." }));
+    resolveFetch(jsonResponse(200, { ok: true, enrichment: ENRICHMENT_FIXTURE }));
   });
 
   it("rapid double-clicks fire only one POST (REQ-12)", async () => {
     mockFetch.mockResolvedValue(
-      jsonResponse(200, { ok: true, enrichedText: "stub" }),
+      jsonResponse(200, { ok: true, enrichment: ENRICHMENT_FIXTURE }),
     );
 
     render(<OnboardingForm />);
@@ -150,13 +156,9 @@ describe("OnboardingForm — Skip path (Scenario 2)", () => {
 });
 
 describe("OnboardingForm — Success state (REQ-13, Scenario 1)", () => {
-  it("shows 'We understood you like: <enrichedText>' confirmation", async () => {
+  it("shows paragraph + genre badges + similar-titles badges", async () => {
     mockFetch.mockResolvedValue(
-      jsonResponse(200, {
-        ok: true,
-        enrichedText:
-          "A user enjoys thriller, drama. Themes: psychological. Mood: dark.",
-      }),
+      jsonResponse(200, { ok: true, enrichment: ENRICHMENT_FIXTURE }),
     );
 
     render(<OnboardingForm />);
@@ -165,16 +167,23 @@ describe("OnboardingForm — Success state (REQ-13, Scenario 1)", () => {
 
     await waitFor(() => {
       expect(screen.getByText(/ми зрозуміли, що тобі подобається/i)).toBeInTheDocument();
-      expect(
-        screen.getByText(/A user enjoys thriller, drama/),
-      ).toBeInTheDocument();
     });
+    expect(
+      screen.getByText(/Тобі подобаються трилери/),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /жанри/i })).toBeInTheDocument();
+    expect(screen.getByText("трилер")).toBeInTheDocument();
+    expect(screen.getByText("драма")).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /схожі фільми/i }),
+    ).toBeInTheDocument();
+    expect(screen.getByText("Se7en")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /продовжити/i })).toBeEnabled();
   });
 
   it("redirects to /feed after Continue click", async () => {
     mockFetch.mockResolvedValue(
-      jsonResponse(200, { ok: true, enrichedText: "stub" }),
+      jsonResponse(200, { ok: true, enrichment: ENRICHMENT_FIXTURE }),
     );
 
     render(<OnboardingForm />);

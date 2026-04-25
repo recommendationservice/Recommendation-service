@@ -12,7 +12,7 @@ export function OnboardingForm() {
   const goToFeed = useCallback(() => router.push("/feed"), [router]);
   const { state, submit } = useOnboardingSubmit({
     onSkipDone: goToFeed,
-    onLlmDoneWithoutText: goToFeed,
+    onLlmDoneWithoutEnrichment: goToFeed,
   });
   const [prompt, setPrompt] = useState("");
 
@@ -23,8 +23,8 @@ export function OnboardingForm() {
 
   const handleSkip = useCallback(() => void submit(null), [submit]);
 
-  if (state.succeededWithText) {
-    return <SuccessView enrichedText={state.enrichedText} onContinue={goToFeed} />;
+  if (state.succeededWithEnrichment) {
+    return <SuccessView enrichment={state.enrichment} onContinue={goToFeed} />;
   }
 
   return (

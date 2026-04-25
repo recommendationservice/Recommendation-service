@@ -2,6 +2,8 @@
 
 import { useCallback, useState } from "react";
 
+import type { Enrichment } from "@sp/reco-sdk";
+
 const ENDPOINT = "/api/demo/onboarding";
 const SUBMIT_TIMEOUT_MS = 15_000;
 
@@ -14,18 +16,18 @@ export type ErrorState =
 export type SubmitState = {
   pending: boolean;
   error: ErrorState;
-  enrichedText?: string;
-  succeededWithText: boolean;
+  enrichment?: Enrichment;
+  succeededWithEnrichment: boolean;
 };
 
 const INITIAL_STATE: SubmitState = {
   pending: false,
   error: { kind: "none" },
-  succeededWithText: false,
+  succeededWithEnrichment: false,
 };
 
 type ApiErrorBody = { error?: { message?: string } };
-type SuccessBody = { enrichedText?: string };
+type SuccessBody = { enrichment?: Enrichment };
 
 async function postOnboarding(rawPrompt: string | null): Promise<Response> {
   return fetch(ENDPOINT, {
@@ -57,13 +59,13 @@ function networkErrorState(): SubmitState {
   return {
     pending: false,
     error: { kind: "network", message: "Помилка мережі. Перевір з'єднання і спробуй ще раз." },
-    succeededWithText: false,
+    succeededWithEnrichment: false,
   };
 }
 
 export type SubmitOptions = {
   onSkipDone: () => void;
-  onLlmDoneWithoutText: () => void;
+  onLlmDoneWithoutEnrichment: () => void;
 };
 
 type Setter = (next: SubmitState | ((prev: SubmitState) => SubmitState)) => void;
@@ -72,11 +74,11 @@ async function readSuccessBody(response: Response): Promise<SuccessBody> {
   return (await response.json().catch(() => ({}))) as SuccessBody;
 }
 
-const successWithText = (enrichedText: string): SubmitState => ({
+const successWithEnrichment = (enrichment: Enrichment): SubmitState => ({
   pending: false,
   error: { kind: "none" },
-  enrichedText,
-  succeededWithText: true,
+  enrichment,
+  succeededWithEnrichment: true,
 });
 
 async function resolveSuccess(
@@ -86,12 +88,12 @@ async function resolveSuccess(
   options: SubmitOptions,
 ): Promise<void> {
   const body = await readSuccessBody(response);
-  if (!isSkip && body.enrichedText) {
-    setState(successWithText(body.enrichedText));
+  if (!isSkip && body.enrichment) {
+    setState(successWithEnrichment(body.enrichment));
     return;
   }
   setState(INITIAL_STATE);
-  (isSkip ? options.onSkipDone : options.onLlmDoneWithoutText)();
+  (isSkip ? options.onSkipDone : options.onLlmDoneWithoutEnrichment)();
 }
 
 const applyHttpFailure = async (response: Response, setState: Setter): Promise<void> => {
@@ -99,7 +101,7 @@ const applyHttpFailure = async (response: Response, setState: Setter): Promise<v
   setState({
     pending: false,
     error: classifyHttpError(response.status, message),
-    succeededWithText: false,
+    succeededWithEnrichment: false,
   });
 };
 

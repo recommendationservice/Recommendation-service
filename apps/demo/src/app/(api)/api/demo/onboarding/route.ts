@@ -1,14 +1,14 @@
 import { eq } from "drizzle-orm";
 import { NextResponse } from "next/server";
 
-import { RecoApiError } from "@sp/reco-sdk";
+import { type Enrichment, RecoApiError } from "@sp/reco-sdk";
 
 import { db, profiles } from "@/db";
 import { getRecoClient } from "@/shared/lib/reco-client";
 import { getSessionProfile } from "@/shared/lib/session";
 
 type OnboardingBody = { rawPrompt: string | null };
-type OnboardingResponse = { ok: true; enrichedText?: string };
+type OnboardingResponse = { ok: true; enrichment?: Enrichment };
 
 async function parseBody(request: Request): Promise<OnboardingBody | null> {
   const raw = await request.json().catch(() => null);
@@ -58,15 +58,15 @@ async function handleLlm(
   profileId: string,
   rawPrompt: string,
 ): Promise<NextResponse> {
-  let enrichedText: string | undefined;
+  let enrichment: Enrichment | undefined;
   try {
     const result = await callBootstrap(profileId, rawPrompt);
-    enrichedText = result.enrichedText;
+    enrichment = result.enrichment;
   } catch (error) {
     return recoErrorResponse(error);
   }
   await markOnboarded(profileId);
-  return NextResponse.json<OnboardingResponse>({ ok: true, enrichedText });
+  return NextResponse.json<OnboardingResponse>({ ok: true, enrichment });
 }
 
 export async function POST(request: Request) {

@@ -81,7 +81,7 @@ describe("POST /api/demo/onboarding — Skip path (Scenario 2, REQ-4)", () => {
     expect(mockDbUpdate).toHaveBeenCalledTimes(1);
   });
 
-  it("returns { ok: true } without enrichedText", async () => {
+  it("returns { ok: true } without enrichment", async () => {
     const res = await POST(makeRequest({ rawPrompt: null }));
     const body = await res.json();
     expect(body).toEqual({ ok: true });
@@ -92,7 +92,11 @@ describe("POST /api/demo/onboarding — LLM happy path (Scenario 1, REQ-4)", () 
   beforeEach(() => {
     mockBootstrapUser.mockResolvedValue({
       preferenceVectorSet: true,
-      enrichedText: "A user enjoys thriller, drama.",
+      enrichment: {
+        paragraph: "Тобі подобаються трилери.",
+        genres: ["thriller", "drama"],
+        similarTitles: ["Se7en"],
+      },
     });
   });
 
@@ -108,7 +112,10 @@ describe("POST /api/demo/onboarding — LLM happy path (Scenario 1, REQ-4)", () 
     const callOrder: string[] = [];
     mockBootstrapUser.mockImplementation(async () => {
       callOrder.push("reco");
-      return { preferenceVectorSet: true, enrichedText: "x" };
+      return {
+        preferenceVectorSet: true,
+        enrichment: { paragraph: "x", genres: ["drama"], similarTitles: [] },
+      };
     });
     mockDbUpdate.mockImplementation(async () => {
       callOrder.push("db");
@@ -118,13 +125,17 @@ describe("POST /api/demo/onboarding — LLM happy path (Scenario 1, REQ-4)", () 
     expect(callOrder).toEqual(["reco", "db"]);
   });
 
-  it("returns 200 with ok=true and enrichedText", async () => {
+  it("returns 200 with ok=true and structured enrichment", async () => {
     const res = await POST(makeRequest({ rawPrompt: "ok" }));
     expect(res.status).toBe(200);
     const body = await res.json();
     expect(body).toMatchObject({
       ok: true,
-      enrichedText: "A user enjoys thriller, drama.",
+      enrichment: {
+        paragraph: "Тобі подобаються трилери.",
+        genres: ["thriller", "drama"],
+        similarTitles: ["Se7en"],
+      },
     });
   });
 });
