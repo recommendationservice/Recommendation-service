@@ -33,18 +33,39 @@ async function postBootstrap(externalUserId: string, body: unknown) {
 }
 
 describe("POST /users/:externalUserId/bootstrap — happy path (REQ-5)", () => {
-  it("200 with preferenceVectorSet=true and enrichedText", async () => {
+  it("200 with preferenceVectorSet=true and structured enrichment", async () => {
     mockBootstrapUser.mockResolvedValue({
       preferenceVectorSet: true,
-      enrichedText: "A user enjoys drama.",
+      enrichment: {
+        paragraph: "Тобі подобаються драми.",
+        genres: ["drama"],
+        similarTitles: ["Manchester by the Sea"],
+      },
     })
     const res = await postBootstrap("u1", { rawPrompt: "Триллери" })
     expect(res.status).toBe(200)
     const body = await res.json()
     expect(body).toEqual({
       preferenceVectorSet: true,
-      enrichedText: "A user enjoys drama.",
+      enrichment: {
+        paragraph: "Тобі подобаються драми.",
+        genres: ["drama"],
+        similarTitles: ["Manchester by the Sea"],
+      },
     })
+  })
+
+  it("200 LLM path with empty similarTitles still parses (similarTitles may be empty)", async () => {
+    mockBootstrapUser.mockResolvedValue({
+      preferenceVectorSet: true,
+      enrichment: {
+        paragraph: "Тобі подобаються драми.",
+        genres: ["drama"],
+        similarTitles: [],
+      },
+    })
+    const res = await postBootstrap("u1", { rawPrompt: "x" })
+    expect(res.status).toBe(200)
   })
 
   it("200 skip path with preferenceVectorSet=false (no rawPrompt)", async () => {
@@ -146,12 +167,16 @@ describe("POST /users/:externalUserId/bootstrap — response Zod parse (REQ-5)",
   it("response is validated with bootstrapResponse before json()", async () => {
     mockBootstrapUser.mockResolvedValue({
       preferenceVectorSet: true,
-      enrichedText: "ok",
+      enrichment: {
+        paragraph: "ok",
+        genres: ["drama"],
+        similarTitles: [],
+      },
     })
     const res = await postBootstrap("u1", { rawPrompt: "x" })
     const body = await res.json()
     expect(Object.keys(body).sort()).toEqual(
-      ["enrichedText", "preferenceVectorSet"].sort(),
+      ["enrichment", "preferenceVectorSet"].sort(),
     )
   })
 })

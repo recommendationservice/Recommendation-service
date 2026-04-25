@@ -55,9 +55,15 @@ export const bootstrapBody = z.object({
   rawPrompt: z.string().min(1).max(2000).optional(),
 })
 
+const enrichmentSchema = z.object({
+  paragraph: z.string().min(1),
+  genres: z.array(z.string()).min(1),
+  similarTitles: z.array(z.string()),
+})
+
 export const bootstrapResponse = z.object({
   preferenceVectorSet: z.boolean(),
-  enrichedText: z.string().optional(),
+  enrichment: enrichmentSchema.optional(),
 })
 
 export const profileStateParams = z.object({

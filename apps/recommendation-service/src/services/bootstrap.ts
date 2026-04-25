@@ -14,9 +14,15 @@ export type BootstrapInput = {
   rawPrompt?: string
 }
 
-export type BootstrapOutput = {
+type Enrichment = {
+  paragraph: string
+  genres: string[]
+  similarTitles: string[]
+}
+
+export type BootstrapResult = {
   preferenceVectorSet: boolean
-  enrichedText?: string
+  enrichment?: Enrichment
 }
 
 function synthesizeCanonicalText(enriched: EnrichedData): string {
@@ -51,9 +57,7 @@ function isWithinDedupWindow(updatedAt: Date | null): boolean {
 
 async function shouldShortCircuit(externalUserId: string): Promise<boolean> {
   const recent = await findRecentProfile(externalUserId)
-  if (!recent) return false
-  if (!recent.preferenceVector) return false
-  return isWithinDedupWindow(recent.updatedAt)
+  return !!recent?.preferenceVector && isWithinDedupWindow(recent.updatedAt)
 }
 
 async function persistVector(externalUserId: string, vector: number[]): Promise<void> {
@@ -65,12 +69,15 @@ async function persistVector(externalUserId: string, vector: number[]): Promise<
   })
 }
 
-function pickEnrichedText(enriched: EnrichedData, canonical: string): string {
-  const summary = enriched.localized_summary ?? ""
-  return summary.length > 0 ? summary : canonical
+function buildEnrichment(enriched: EnrichedData, canonical: string): Enrichment {
+  return {
+    paragraph: enriched.localized_summary || canonical,
+    genres: enriched.genres,
+    similarTitles: enriched.sample_titles,
+  }
 }
 
-async function runLlmPath(input: { externalUserId: string; rawPrompt: string }): Promise<BootstrapOutput> {
+async function runLlmPath(input: { externalUserId: string; rawPrompt: string }): Promise<BootstrapResult> {
   if (await shouldShortCircuit(input.externalUserId)) {
     return { preferenceVectorSet: true }
   }
@@ -78,10 +85,10 @@ async function runLlmPath(input: { externalUserId: string; rawPrompt: string }):
   const canonicalText = synthesizeCanonicalText(enriched)
   const vector = await generateEmbedding(canonicalText)
   await persistVector(input.externalUserId, vector)
-  return { preferenceVectorSet: true, enrichedText: pickEnrichedText(enriched, canonicalText) }
+  return { preferenceVectorSet: true, enrichment: buildEnrichment(enriched, canonicalText) }
 }
 
-export async function bootstrapUser(input: BootstrapInput): Promise<BootstrapOutput> {
+export async function bootstrapUser(input: BootstrapInput): Promise<BootstrapResult> {
   if (input.rawPrompt === undefined) return { preferenceVectorSet: false }
   return runLlmPath({ externalUserId: input.externalUserId, rawPrompt: input.rawPrompt })
 }

@@ -114,14 +114,15 @@ describe("bootstrapUser — LLM happy path (REQ-6, REQ-8)", () => {
     expect(capturedText).toMatch(/Se7en/i)
   })
 
-  it("returns { preferenceVectorSet: true, enrichedText }", async () => {
+  it("returns { preferenceVectorSet: true, enrichment: { paragraph, genres, similarTitles } }", async () => {
     const result = await bootstrapUser({
       externalUserId: "u1",
       rawPrompt: "x",
     })
     expect(result.preferenceVectorSet).toBe(true)
-    expect(result.enrichedText).toBeTypeOf("string")
-    expect(result.enrichedText?.length).toBeGreaterThan(0)
+    expect(result.enrichment?.paragraph.length).toBeGreaterThan(0)
+    expect(result.enrichment?.genres).toEqual(["thriller", "drama"])
+    expect(result.enrichment?.similarTitles).toEqual(["Se7en", "Zodiac"])
   })
 })
 
