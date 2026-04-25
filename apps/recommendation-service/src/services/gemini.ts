@@ -3,10 +3,10 @@ import { BootstrapEnrichmentError } from "../lib/errors"
 const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 const MODEL = "google/gemini-2.5-flash"
 const REQUEST_TIMEOUT_MS = 10_000
-const MAX_TOKENS = 300
+const MAX_TOKENS = 600
 const TEMPERATURE = 0.2
 
-const LIMITS = { genres: 5, themes: 5, moods: 5, sampleTitles: 8, stringLen: 100 }
+const LIMITS = { genres: 5, themes: 5, moods: 5, sampleTitles: 8, stringLen: 100, summaryLen: 400 }
 
 const ALLOWED_GENRES = new Set<string>([
   "action", "adventure", "animation", "comedy", "crime", "documentary",
@@ -21,9 +21,17 @@ const ALLOWED_MOODS = new Set<string>([
 
 const SYSTEM_PROMPT = `You are a movie-taste interpreter. Given a user's free-text description of what they like,
 return a JSON object with keys: genres (string[]), themes (string[]), moods (string[]),
-sample_titles (string[]). Use only lowercase English strings. Pick at most 5 genres and
-5 moods from the controlled vocabulary. Keep sample_titles to 3-5 real movie titles that
-match the description. Do not include explanations outside the JSON.
+sample_titles (string[]), localized_summary (string).
+
+Use only lowercase English strings for genres, themes, moods, and sample_titles. Pick at
+most 5 genres and 5 moods from the controlled vocabulary below. Keep sample_titles to 3-5
+real movie titles that match the description.
+
+The localized_summary MUST be written in Ukrainian (українською мовою), 1-2 short sentences,
+addressing the user with "ти" (informal). Describe what kinds of films match their taste
+based on the same genres / themes / moods / titles you returned. Do not include any English
+words in localized_summary except for proper film titles. Do not include explanations
+outside the JSON.
 
 Controlled genres: action, adventure, animation, comedy, crime, documentary, drama, family,
 fantasy, history, horror, music, mystery, romance, science fiction, thriller, war, western.
@@ -35,6 +43,7 @@ export type EnrichedData = {
   themes: string[]
   moods: string[]
   sample_titles: string[]
+  localized_summary?: string
 }
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY
@@ -109,6 +118,11 @@ function pickAllowed(value: unknown, allowed: Set<string>, max: number): string[
   return asStringArray(value).filter((v) => allowed.has(v)).slice(0, max)
 }
 
+function pickSummary(value: unknown): string {
+  if (typeof value !== "string") return ""
+  return value.trim().slice(0, LIMITS.summaryLen)
+}
+
 function buildEnriched(parsed: unknown): EnrichedData {
   const raw = (parsed ?? {}) as Record<string, unknown>
   const genres = pickAllowed(raw.genres, ALLOWED_GENRES, LIMITS.genres)
@@ -120,6 +134,7 @@ function buildEnriched(parsed: unknown): EnrichedData {
     moods: pickAllowed(raw.moods, ALLOWED_MOODS, LIMITS.moods),
     themes: asStringArray(raw.themes).slice(0, LIMITS.themes),
     sample_titles: asStringArray(raw.sample_titles).slice(0, LIMITS.sampleTitles),
+    localized_summary: pickSummary(raw.localized_summary),
   }
 }
 

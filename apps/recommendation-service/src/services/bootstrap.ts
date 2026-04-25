@@ -65,6 +65,11 @@ async function persistVector(externalUserId: string, vector: number[]): Promise<
   })
 }
 
+function pickEnrichedText(enriched: EnrichedData, canonical: string): string {
+  const summary = enriched.localized_summary ?? ""
+  return summary.length > 0 ? summary : canonical
+}
+
 async function runLlmPath(input: { externalUserId: string; rawPrompt: string }): Promise<BootstrapOutput> {
   if (await shouldShortCircuit(input.externalUserId)) {
     return { preferenceVectorSet: true }
@@ -73,7 +78,7 @@ async function runLlmPath(input: { externalUserId: string; rawPrompt: string }):
   const canonicalText = synthesizeCanonicalText(enriched)
   const vector = await generateEmbedding(canonicalText)
   await persistVector(input.externalUserId, vector)
-  return { preferenceVectorSet: true, enrichedText: canonicalText }
+  return { preferenceVectorSet: true, enrichedText: pickEnrichedText(enriched, canonicalText) }
 }
 
 export async function bootstrapUser(input: BootstrapInput): Promise<BootstrapOutput> {

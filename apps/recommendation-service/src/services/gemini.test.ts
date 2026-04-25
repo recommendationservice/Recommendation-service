@@ -51,7 +51,7 @@ describe("gemini.enrichPrompt — OpenRouter request shape (REQ-7)", () => {
     const body = JSON.parse((init as RequestInit).body as string)
     expect(body.model).toBe("google/gemini-2.5-flash")
     expect(body.temperature).toBe(0.2)
-    expect(body.max_tokens).toBe(300)
+    expect(body.max_tokens).toBe(600)
     expect(body.response_format).toMatchObject({ type: expect.stringMatching(/json/) })
   })
 
