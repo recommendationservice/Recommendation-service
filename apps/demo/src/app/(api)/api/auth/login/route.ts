@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
 import { db, profiles } from "@/db";
+import { userIsOnboarded } from "@/shared/lib/onboarding-gate";
 
 const SESSION_COOKIE = "demo-session";
 const SESSION_MAX_AGE_SECONDS = 60 * 60 * 24 * 30;
@@ -38,8 +39,10 @@ async function upsertProfile(login: string): Promise<ProfileRow> {
   return inserted.length > 0 ? (inserted[0] as ProfileRow) : findExisting(login);
 }
 
-function pickRedirect(profile: ProfileRow): "/onboarding" | "/feed" {
-  return profile.onboardedAt ? "/feed" : "/onboarding";
+async function pickRedirect(
+  profile: ProfileRow,
+): Promise<"/onboarding" | "/feed"> {
+  return (await userIsOnboarded(profile)) ? "/feed" : "/onboarding";
 }
 
 async function setSessionCookie(profileId: string): Promise<void> {
@@ -56,11 +59,11 @@ export async function POST(request: Request) {
   const payload = await request.json().catch(() => null);
   const login = validateLogin(payload?.login);
   if (!login) {
-    return NextResponse.json({ error: "Login is required" }, { status: 400 });
+    return NextResponse.json({ error: "Логін обовʼязковий" }, { status: 400 });
   }
 
   const profile = await upsertProfile(login);
   await setSessionCookie(profile.id);
 
-  return NextResponse.json({ ok: true, redirect: pickRedirect(profile) });
+  return NextResponse.json({ ok: true, redirect: await pickRedirect(profile) });
 }

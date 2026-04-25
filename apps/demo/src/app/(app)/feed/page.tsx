@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
 import { FeedContent } from "@/features/feed";
+import { userIsOnboarded } from "@/shared/lib/onboarding-gate";
 import { getSessionProfile } from "@/shared/lib/session";
 
 export default async function FeedRoute() {
@@ -8,7 +9,7 @@ export default async function FeedRoute() {
 	if (!profile) {
 		redirect("/auth");
 	}
-	if (!profile.onboardedAt) {
+	if (!(await userIsOnboarded(profile))) {
 		redirect("/onboarding");
 	}
 
