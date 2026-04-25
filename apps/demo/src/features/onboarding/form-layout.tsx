@@ -22,11 +22,11 @@ export function FormLayout(props: FormLayoutProps) {
       <SkipButton onClick={props.onSkip} disabled={props.pending} />
       <div className="flex w-full max-w-[520px] flex-col gap-4">
         <h1 className="font-inter text-2xl font-black text-black/80">
-          Tell us what you like
+          Розкажи, що тобі подобається
         </h1>
         <p className="font-montserrat text-sm text-black/70">
-          Describe your taste in one sentence. Our AI will turn it into a
-          starting point for your feed.
+          Опиши свій смак одним реченням. Наш ШІ перетворить це на стартову
+          точку для твоєї стрічки.
         </p>
         <PromptField value={props.prompt} onChange={props.onPromptChange} />
         <ErrorRegion error={props.error} pending={props.pending} onRetry={props.onSubmit} />

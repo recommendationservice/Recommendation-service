@@ -10,7 +10,7 @@ export function PromptField({ value, onChange }: PromptFieldProps) {
       value={value}
       onChange={(e) => onChange(e.target.value)}
       maxLength={MAX_PROMPT_LENGTH}
-      placeholder="e.g. Dark thrillers from the 90s, like Se7en"
+      placeholder="напр. Темні трилери 90-х, як Сімка"
       className="min-h-[120px] rounded-[10px] bg-white p-3 font-montserrat text-base outline-none"
     />
   );

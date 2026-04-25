@@ -45,18 +45,18 @@ async function readErrorMessage(response: Response, fallback: string): Promise<s
   }
 }
 
-const AI_DOWN_MESSAGE = "AI temporarily unavailable, please retry";
+const AI_DOWN_MESSAGE = "ШІ тимчасово недоступний, спробуй ще раз";
 
 function classifyHttpError(status: number, message: string): ErrorState {
   if (status === 503) return { kind: "ai-down", message: AI_DOWN_MESSAGE };
   if (status === 400 || status === 422) return { kind: "validation", message };
-  return { kind: "network", message: `Unexpected error (${status})` };
+  return { kind: "network", message: `Несподівана помилка (${status})` };
 }
 
 function networkErrorState(): SubmitState {
   return {
     pending: false,
-    error: { kind: "network", message: "Network error. Check connection and retry." },
+    error: { kind: "network", message: "Помилка мережі. Перевір з'єднання і спробуй ще раз." },
     succeededWithText: false,
   };
 }
@@ -95,7 +95,7 @@ async function resolveSuccess(
 }
 
 const applyHttpFailure = async (response: Response, setState: Setter): Promise<void> => {
-  const message = await readErrorMessage(response, "Request failed");
+  const message = await readErrorMessage(response, "Помилка запиту");
   setState({
     pending: false,
     error: classifyHttpError(response.status, message),

@@ -38,9 +38,9 @@ describe("OnboardingForm — Default state (REQ-2, spec UI States)", () => {
     expect(screen.getByRole("textbox")).toBeInTheDocument();
     expect(screen.getByRole("textbox")).not.toBeDisabled();
     expect(
-      screen.getByRole("button", { name: /submit/i }),
+      screen.getByRole("button", { name: /надіслати/i }),
     ).toBeDisabled();
-    expect(screen.getByLabelText(/skip/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/пропустити/i)).toBeInTheDocument();
   });
 
   it("textarea max length 2000 (REQ-2)", () => {
@@ -53,7 +53,7 @@ describe("OnboardingForm — Default state (REQ-2, spec UI States)", () => {
 describe("OnboardingForm — Typing state", () => {
   it("Submit becomes enabled when textarea has 1+ chars", async () => {
     render(<OnboardingForm />);
-    const submit = screen.getByRole("button", { name: /submit/i });
+    const submit = screen.getByRole("button", { name: /надіслати/i });
     expect(submit).toBeDisabled();
 
     await userEvent.type(screen.getByRole("textbox"), "Дарк-триллери");
@@ -63,7 +63,7 @@ describe("OnboardingForm — Typing state", () => {
   it("Submit becomes disabled again when textarea is cleared", async () => {
     render(<OnboardingForm />);
     const textarea = screen.getByRole("textbox");
-    const submit = screen.getByRole("button", { name: /submit/i });
+    const submit = screen.getByRole("button", { name: /надіслати/i });
 
     await userEvent.type(textarea, "abc");
     expect(submit).toBeEnabled();
@@ -84,11 +84,11 @@ describe("OnboardingForm — Submitting state (REQ-15, REQ-12 double-submit)", (
 
     render(<OnboardingForm />);
     await userEvent.type(screen.getByRole("textbox"), "Триллери");
-    await userEvent.click(screen.getByRole("button", { name: /submit/i }));
+    await userEvent.click(screen.getByRole("button", { name: /надіслати/i }));
 
-    expect(screen.getByText(/thinking/i)).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /submit/i })).toBeDisabled();
-    expect(screen.getByLabelText(/skip/i)).toBeDisabled();
+    expect(screen.getByText(/аналізуємо/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /надіслати/i })).toBeDisabled();
+    expect(screen.getByLabelText(/пропустити/i)).toBeDisabled();
 
     resolveFetch(jsonResponse(200, { ok: true, enrichedText: "..." }));
   });
@@ -100,7 +100,7 @@ describe("OnboardingForm — Submitting state (REQ-15, REQ-12 double-submit)", (
 
     render(<OnboardingForm />);
     await userEvent.type(screen.getByRole("textbox"), "Hello");
-    const submit = screen.getByRole("button", { name: /submit/i });
+    const submit = screen.getByRole("button", { name: /надіслати/i });
     await userEvent.click(submit);
     await userEvent.click(submit);
     await userEvent.click(submit);
@@ -116,7 +116,7 @@ describe("OnboardingForm — Skip path (Scenario 2)", () => {
     mockFetch.mockResolvedValue(jsonResponse(200, { ok: true }));
     render(<OnboardingForm />);
 
-    await userEvent.click(screen.getByLabelText(/skip/i));
+    await userEvent.click(screen.getByLabelText(/пропустити/i));
 
     await waitFor(() => {
       expect(mockFetch).toHaveBeenCalledWith(
@@ -140,7 +140,7 @@ describe("OnboardingForm — Skip path (Scenario 2)", () => {
       screen.getByRole("textbox"),
       "draft prompt",
     );
-    await userEvent.click(screen.getByLabelText(/skip/i));
+    await userEvent.click(screen.getByLabelText(/пропустити/i));
 
     await waitFor(() => {
       const call = mockFetch.mock.calls[0];
@@ -161,15 +161,15 @@ describe("OnboardingForm — Success state (REQ-13, Scenario 1)", () => {
 
     render(<OnboardingForm />);
     await userEvent.type(screen.getByRole("textbox"), "Триллери");
-    await userEvent.click(screen.getByRole("button", { name: /submit/i }));
+    await userEvent.click(screen.getByRole("button", { name: /надіслати/i }));
 
     await waitFor(() => {
-      expect(screen.getByText(/we understood you like/i)).toBeInTheDocument();
+      expect(screen.getByText(/ми зрозуміли, що тобі подобається/i)).toBeInTheDocument();
       expect(
         screen.getByText(/A user enjoys thriller, drama/),
       ).toBeInTheDocument();
     });
-    expect(screen.getByRole("button", { name: /continue/i })).toBeEnabled();
+    expect(screen.getByRole("button", { name: /продовжити/i })).toBeEnabled();
   });
 
   it("redirects to /feed after Continue click", async () => {
@@ -179,10 +179,10 @@ describe("OnboardingForm — Success state (REQ-13, Scenario 1)", () => {
 
     render(<OnboardingForm />);
     await userEvent.type(screen.getByRole("textbox"), "X");
-    await userEvent.click(screen.getByRole("button", { name: /submit/i }));
+    await userEvent.click(screen.getByRole("button", { name: /надіслати/i }));
 
     await userEvent.click(
-      await screen.findByRole("button", { name: /continue/i }),
+      await screen.findByRole("button", { name: /продовжити/i }),
     );
     expect(mockPush).toHaveBeenCalledWith("/feed");
   });
@@ -197,14 +197,14 @@ describe("OnboardingForm — Error 503 (Scenario 3)", () => {
     render(<OnboardingForm />);
     const textarea = screen.getByRole("textbox") as HTMLTextAreaElement;
     await userEvent.type(textarea, "Триллери 90-х");
-    await userEvent.click(screen.getByRole("button", { name: /submit/i }));
+    await userEvent.click(screen.getByRole("button", { name: /надіслати/i }));
 
     await waitFor(() => {
-      expect(screen.getByText(/temporarily unavailable/i)).toBeInTheDocument();
+      expect(screen.getByText(/тимчасово недоступний/i)).toBeInTheDocument();
     });
-    expect(screen.getByRole("button", { name: /retry/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /спробувати ще раз/i })).toBeInTheDocument();
     expect(textarea.value).toBe("Триллери 90-х");
-    expect(screen.getByRole("button", { name: /submit/i })).toBeEnabled();
+    expect(screen.getByRole("button", { name: /надіслати/i })).toBeEnabled();
   });
 
   it("Retry re-fires the same fetch with same rawPrompt", async () => {
@@ -216,9 +216,9 @@ describe("OnboardingForm — Error 503 (Scenario 3)", () => {
 
     render(<OnboardingForm />);
     await userEvent.type(screen.getByRole("textbox"), "Same prompt");
-    await userEvent.click(screen.getByRole("button", { name: /submit/i }));
+    await userEvent.click(screen.getByRole("button", { name: /надіслати/i }));
 
-    await userEvent.click(await screen.findByRole("button", { name: /retry/i }));
+    await userEvent.click(await screen.findByRole("button", { name: /спробувати ще раз/i }));
 
     await waitFor(() => {
       expect(mockFetch).toHaveBeenCalledTimes(2);
@@ -236,10 +236,10 @@ describe("OnboardingForm — Error 503 (Scenario 3)", () => {
 
     render(<OnboardingForm />);
     await userEvent.type(screen.getByRole("textbox"), "X");
-    await userEvent.click(screen.getByRole("button", { name: /submit/i }));
+    await userEvent.click(screen.getByRole("button", { name: /надіслати/i }));
 
-    await screen.findByRole("button", { name: /retry/i });
-    await userEvent.click(screen.getByLabelText(/skip/i));
+    await screen.findByRole("button", { name: /спробувати ще раз/i });
+    await userEvent.click(screen.getByLabelText(/пропустити/i));
 
     await waitFor(() => {
       const second = mockFetch.mock.calls[1];
@@ -259,13 +259,13 @@ describe("OnboardingForm — Validation errors (400/422)", () => {
 
     render(<OnboardingForm />);
     await userEvent.type(screen.getByRole("textbox"), "qwertyzz");
-    await userEvent.click(screen.getByRole("button", { name: /submit/i }));
+    await userEvent.click(screen.getByRole("button", { name: /надіслати/i }));
 
     await waitFor(() => {
       expect(screen.getByText(/couldn't interpret/i)).toBeInTheDocument();
     });
     expect(
-      screen.queryByRole("button", { name: /retry/i }),
+      screen.queryByRole("button", { name: /спробувати ще раз/i }),
     ).not.toBeInTheDocument();
   });
 });
@@ -276,12 +276,12 @@ describe("OnboardingForm — Network error", () => {
 
     render(<OnboardingForm />);
     await userEvent.type(screen.getByRole("textbox"), "X");
-    await userEvent.click(screen.getByRole("button", { name: /submit/i }));
+    await userEvent.click(screen.getByRole("button", { name: /надіслати/i }));
 
     await waitFor(() => {
-      expect(screen.getByText(/network/i)).toBeInTheDocument();
+      expect(screen.getByText(/мереж/i)).toBeInTheDocument();
     });
-    expect(screen.getByRole("button", { name: /submit/i })).toBeEnabled();
+    expect(screen.getByRole("button", { name: /надіслати/i })).toBeEnabled();
   });
 });
 
@@ -293,7 +293,7 @@ describe("OnboardingForm — fetch contract", () => {
 
     render(<OnboardingForm />);
     await userEvent.type(screen.getByRole("textbox"), "Hello world");
-    await userEvent.click(screen.getByRole("button", { name: /submit/i }));
+    await userEvent.click(screen.getByRole("button", { name: /надіслати/i }));
 
     await waitFor(() => {
       expect(mockFetch).toHaveBeenCalledTimes(1);
@@ -317,7 +317,7 @@ describe("OnboardingForm — fetch contract", () => {
 
     render(<OnboardingForm />);
     await userEvent.type(screen.getByRole("textbox"), "X");
-    await userEvent.click(screen.getByRole("button", { name: /submit/i }));
+    await userEvent.click(screen.getByRole("button", { name: /надіслати/i }));
 
     await waitFor(() => {
       expect(capturedSignal).toBeInstanceOf(AbortSignal);

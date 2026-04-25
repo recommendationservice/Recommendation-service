@@ -16,7 +16,7 @@ export function AiDownAlert({ message, onRetry, disabled }: AiDownAlertProps) {
         disabled={disabled}
         className="self-start rounded-[8px] bg-red-600 px-3 py-1 font-inter text-sm text-white disabled:opacity-50"
       >
-        Retry
+        Спробувати ще раз
       </button>
     </div>
   );
