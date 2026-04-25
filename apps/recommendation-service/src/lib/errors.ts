@@ -13,7 +13,22 @@ export class AppError extends Error {
   }
 }
 
-const errorBody = (message: string) => ({ error: { message } })
+export type BootstrapEnrichmentCode =
+  | "unparsable_json"
+  | "empty_after_filter"
+  | "safety_blocked"
+  | "quota_exceeded"
+
+export class BootstrapEnrichmentError extends Error {
+  constructor(
+    public code: BootstrapEnrichmentCode,
+    message: string,
+  ) {
+    super(message)
+  }
+}
+
+export const errorBody = (message: string) => ({ error: { message } })
 
 export function errorHandler(err: Error, c: Context) {
   if (err instanceof AppError) {

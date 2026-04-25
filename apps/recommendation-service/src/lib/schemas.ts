@@ -46,3 +46,16 @@ export const getScoreBreakdownQuery = z.object({
   groupBy: jsonIdentifier,
   limit: z.coerce.number().int().min(1).max(100).default(20),
 })
+
+export const bootstrapParams = z.object({
+  externalUserId: z.string().min(1),
+})
+
+export const bootstrapBody = z.object({
+  rawPrompt: z.string().min(1).max(2000).optional(),
+})
+
+export const bootstrapResponse = z.object({
+  preferenceVectorSet: z.boolean(),
+  enrichedText: z.string().optional(),
+})
