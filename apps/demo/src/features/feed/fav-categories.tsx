@@ -92,7 +92,7 @@ function pickColor(index: number): RankColor {
 
 function Row({ row }: { row: CategoryRow }) {
 	return (
-		<div className="mx-auto mt-[7px] flex w-full items-center justify-between gap-[10px] overflow-hidden rounded-[5px] bg-[#f8f8f8] px-[12px] py-[5px]">
+		<div className="mx-auto mt-[7px] flex w-full items-center justify-between gap-[10px] overflow-hidden rounded-[5px] bg-app-canvas px-[12px] py-[5px]">
 			<div className="flex items-center gap-[10px]">
 				{row.rank !== null ? (
 					<span
@@ -131,7 +131,7 @@ function renderSkeleton() {
 	return Array.from({ length: MAX_ROWS }).map((_, idx) => (
 		<div
 			key={idx}
-			className="mx-auto mt-[7px] h-[34px] w-[317px] animate-pulse rounded-[5px] bg-[#f8f8f8]"
+			className="mx-auto mt-[7px] h-[34px] w-[317px] animate-pulse rounded-[5px] bg-app-canvas"
 		/>
 	));
 }

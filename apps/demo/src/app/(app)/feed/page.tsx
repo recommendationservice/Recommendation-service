@@ -8,6 +8,9 @@ export default async function FeedRoute() {
 	if (!profile) {
 		redirect("/auth");
 	}
+	if (!profile.onboardedAt) {
+		redirect("/onboarding");
+	}
 
 	return (
 		<FeedContent

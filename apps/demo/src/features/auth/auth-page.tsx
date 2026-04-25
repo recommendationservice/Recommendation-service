@@ -26,11 +26,13 @@ export function AuthPage() {
       return;
     }
 
-    window.location.href = "/feed";
+    const data = await res.json().catch(() => null);
+    const target = (data?.redirect as string | undefined) ?? "/feed";
+    window.location.href = target;
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#f8f8f8]">
+    <div className="flex min-h-screen items-center justify-center bg-app-canvas">
       <div className="flex w-[294px] flex-col gap-[15px]">
         <h1 className="font-inter text-2xl font-black text-black/80">Вхід</h1>
 

@@ -24,7 +24,7 @@ export function FeedPage({
 	resetButton,
 }: FeedPageProps) {
 	return (
-		<div className="flex h-screen justify-center overflow-hidden bg-[#f8f8f8]">
+		<div className="flex h-screen justify-center overflow-hidden bg-app-canvas">
 			<aside className="flex h-full w-[357px] flex-col justify-between overflow-hidden px-[10px] py-[25px]">
 				<div className="flex flex-col items-center gap-5">
 					<h1 className="w-full font-inter text-2xl font-black leading-[1.21] text-black/80">

@@ -41,7 +41,10 @@ describe("AuthPage", () => {
   });
 
   it("calls login API on button click", async () => {
-    mockFetch.mockResolvedValue({ ok: true, json: () => ({ ok: true }) });
+    mockFetch.mockResolvedValue({
+      ok: true,
+      json: () => Promise.resolve({ ok: true, redirect: "/feed" }),
+    });
     const user = userEvent.setup();
     render(<AuthPage />);
 

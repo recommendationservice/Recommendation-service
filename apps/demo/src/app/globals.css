@@ -56,6 +56,7 @@
   --color-action-view-bg: rgba(0, 0, 0, 0.05);
   --color-action-dislike: #888888;
   --color-action-dislike-bg: rgba(0, 0, 0, 0.05);
+  --color-app-canvas: #f8f8f8;
 }
 
 :root {
