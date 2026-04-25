@@ -63,3 +63,13 @@ export type ScoreBreakdownResult = {
 	items: ScoreBreakdownItem[];
 	totalEvents: number;
 };
+
+export type BootstrapInput = {
+	externalUserId: string;
+	rawPrompt?: string;
+};
+
+export type BootstrapResult = {
+	preferenceVectorSet: boolean;
+	enrichedText?: string;
+};
