@@ -4,6 +4,7 @@ export { RecoApiError } from "./errors";
 export type {
 	BootstrapInput,
 	BootstrapResult,
+	Enrichment,
 	GetRecommendationsInput,
 	GetRecommendationsResult,
 	ProfileState,

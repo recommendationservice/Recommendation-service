@@ -69,9 +69,15 @@ export type BootstrapInput = {
 	rawPrompt?: string;
 };
 
+export type Enrichment = {
+	paragraph: string;
+	genres: string[];
+	similarTitles: string[];
+};
+
 export type BootstrapResult = {
 	preferenceVectorSet: boolean;
-	enrichedText?: string;
+	enrichment?: Enrichment;
 };
 
 export type ProfileState = {

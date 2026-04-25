@@ -40,24 +40,51 @@ describe("Contract: reco bootstrapResponse ↔ SDK BootstrapResult (REQ-9)", () 
   it("happy reco response parses into SDK type shape", () => {
     const recoResponse = {
       preferenceVectorSet: true,
-      enrichedText: "A user enjoys drama.",
+      enrichment: {
+        paragraph: "Тобі подобаються драми.",
+        genres: ["drama"],
+        similarTitles: ["Manchester by the Sea"],
+      },
     };
     const parsed = bootstrapResponse.parse(recoResponse);
     const asSdk: BootstrapResult = parsed;
     expect(asSdk.preferenceVectorSet).toBe(true);
-    expect(asSdk.enrichedText).toBe("A user enjoys drama.");
+    expect(asSdk.enrichment?.paragraph).toBe("Тобі подобаються драми.");
+    expect(asSdk.enrichment?.genres).toEqual(["drama"]);
   });
 
-  it("skip path: reco response without enrichedText parses", () => {
+  it("skip path: reco response without enrichment parses", () => {
     const recoResponse = { preferenceVectorSet: false };
     const parsed = bootstrapResponse.parse(recoResponse);
     const asSdk: BootstrapResult = parsed;
     expect(asSdk.preferenceVectorSet).toBe(false);
-    expect(asSdk.enrichedText).toBeUndefined();
+    expect(asSdk.enrichment).toBeUndefined();
   });
 
   it("rejects missing preferenceVectorSet", () => {
-    expect(() => bootstrapResponse.parse({ enrichedText: "x" })).toThrow();
+    expect(() =>
+      bootstrapResponse.parse({
+        enrichment: { paragraph: "x", genres: ["drama"], similarTitles: [] },
+      }),
+    ).toThrow();
+  });
+
+  it("rejects enrichment with empty paragraph", () => {
+    expect(() =>
+      bootstrapResponse.parse({
+        preferenceVectorSet: true,
+        enrichment: { paragraph: "", genres: ["drama"], similarTitles: [] },
+      }),
+    ).toThrow();
+  });
+
+  it("rejects enrichment with empty genres array", () => {
+    expect(() =>
+      bootstrapResponse.parse({
+        preferenceVectorSet: true,
+        enrichment: { paragraph: "x", genres: [], similarTitles: [] },
+      }),
+    ).toThrow();
   });
 });
 
@@ -152,7 +179,7 @@ describe("Contract: SDK error surface (REQ-9)", () => {
 describe("Contract: SDK validates reco response shape at the wire (REQ-9, drift-guard)", () => {
   it("malformed 200 response (missing preferenceVectorSet) → client throws", async () => {
     const fakeFetch: typeof fetch = async () =>
-      new Response(JSON.stringify({ enrichedText: "drifted" }), {
+      new Response(JSON.stringify({ enrichment: { paragraph: "drifted" } }), {
         status: 200,
         headers: { "Content-Type": "application/json" },
       });
