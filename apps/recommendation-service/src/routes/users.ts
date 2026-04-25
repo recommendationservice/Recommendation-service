@@ -7,6 +7,8 @@ import {
   bootstrapResponse,
   getScoreBreakdownParams,
   getScoreBreakdownQuery,
+  profileStateParams,
+  profileStateResponse,
 } from "../lib/schemas"
 import * as userService from "../services/users"
 import { getScoreBreakdown } from "../services/score-breakdown"
@@ -19,6 +21,16 @@ userRoutes.delete("/:externalUserId", async (c) => {
   await userService.resetUser(externalUserId)
   return c.body(null, 204)
 })
+
+userRoutes.get(
+  "/:externalUserId/profile-state",
+  validate("param", profileStateParams),
+  async (c) => {
+    const { externalUserId } = c.req.valid("param")
+    const state = await userService.getProfileState(externalUserId)
+    return c.json(profileStateResponse.parse(state))
+  },
+)
 
 userRoutes.get(
   "/:externalUserId/score-breakdown",

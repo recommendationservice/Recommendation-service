@@ -3,6 +3,17 @@ import { eq } from "drizzle-orm";
 import { db } from "../db/client";
 import { events, userProfiles, viewHistory } from "../db/schema";
 
+export async function getProfileState(
+  externalUserId: string,
+): Promise<{ hasPreferenceVector: boolean }> {
+  const [profile] = await db
+    .select({ preferenceVector: userProfiles.preferenceVector })
+    .from(userProfiles)
+    .where(eq(userProfiles.externalUserId, externalUserId))
+    .limit(1)
+  return { hasPreferenceVector: profile?.preferenceVector != null }
+}
+
 export async function resetUser(externalUserId: string): Promise<void> {
   await db.transaction(async (tx) => {
     const [profile] = await tx

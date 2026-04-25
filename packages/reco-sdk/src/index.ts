@@ -6,6 +6,7 @@ export type {
 	BootstrapResult,
 	GetRecommendationsInput,
 	GetRecommendationsResult,
+	ProfileState,
 	RecommendationItem,
 	RecommendationStrategy,
 	RecoEventType,

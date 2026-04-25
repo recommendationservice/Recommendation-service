@@ -73,3 +73,7 @@ export type BootstrapResult = {
 	preferenceVectorSet: boolean;
 	enrichedText?: string;
 };
+
+export type ProfileState = {
+	hasPreferenceVector: boolean;
+};

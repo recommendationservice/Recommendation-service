@@ -28,6 +28,10 @@ export function buildBootstrapPath(input: BootstrapInput): string {
 	return `/users/${encodeURIComponent(input.externalUserId)}/bootstrap`;
 }
 
+export function buildProfileStatePath(externalUserId: string): string {
+	return `/users/${encodeURIComponent(externalUserId)}/profile-state`;
+}
+
 export function buildBootstrapBody(input: BootstrapInput): string {
 	const body: { rawPrompt?: string } = {};
 	if (input.rawPrompt !== undefined) body.rawPrompt = input.rawPrompt;

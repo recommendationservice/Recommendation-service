@@ -59,3 +59,11 @@ export const bootstrapResponse = z.object({
   preferenceVectorSet: z.boolean(),
   enrichedText: z.string().optional(),
 })
+
+export const profileStateParams = z.object({
+  externalUserId: z.string().min(1),
+})
+
+export const profileStateResponse = z.object({
+  hasPreferenceVector: z.boolean(),
+})

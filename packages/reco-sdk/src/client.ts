@@ -1,6 +1,8 @@
+import { isBootstrapResult, isProfileState } from "./guards";
 import {
 	buildBootstrapBody,
 	buildBootstrapPath,
+	buildProfileStatePath,
 	buildRecommendationsPath,
 	buildResetUserPath,
 	buildScoreBreakdownPath,
@@ -11,6 +13,7 @@ import type {
 	BootstrapResult,
 	GetRecommendationsInput,
 	GetRecommendationsResult,
+	ProfileState,
 	RecordedEvent,
 	RecordEventInput,
 	ScoreBreakdownInput,
@@ -32,14 +35,8 @@ export type RecoClient = {
 		input: ScoreBreakdownInput,
 	) => Promise<ScoreBreakdownResult>;
 	bootstrapUser: (input: BootstrapInput) => Promise<BootstrapResult>;
+	getProfileState: (externalUserId: string) => Promise<ProfileState>;
 };
-
-function isBootstrapResult(value: unknown): value is BootstrapResult {
-	if (!value || typeof value !== "object") return false;
-	const c = value as Record<string, unknown>;
-	if (typeof c.preferenceVectorSet !== "boolean") return false;
-	return c.enrichedText === undefined || typeof c.enrichedText === "string";
-}
 
 function makeGetRecommendations(
 	request: Requester,
@@ -96,6 +93,18 @@ function makeBootstrapUser(request: Requester): RecoClient["bootstrapUser"] {
 	};
 }
 
+function makeGetProfileState(request: Requester): RecoClient["getProfileState"] {
+	return async (externalUserId) => {
+		const raw = await request<unknown>(buildProfileStatePath(externalUserId), {
+			method: "GET",
+		});
+		if (!isProfileState(raw)) {
+			throw new Error("Reco profile-state response shape invalid");
+		}
+		return raw;
+	};
+}
+
 export function createRecoClient(options: RecoClientOptions): RecoClient {
 	const baseUrl = options.baseUrl.replace(/\/$/, "");
 	const fetchImpl = options.fetch ?? globalThis.fetch;
@@ -106,5 +115,6 @@ export function createRecoClient(options: RecoClientOptions): RecoClient {
 		resetUser: makeResetUser(request),
 		getScoreBreakdown: makeGetScoreBreakdown(request),
 		bootstrapUser: makeBootstrapUser(request),
+		getProfileState: makeGetProfileState(request),
 	};
 }
