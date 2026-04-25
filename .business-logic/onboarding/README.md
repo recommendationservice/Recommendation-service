@@ -13,6 +13,7 @@ Scope: `apps/demo/` UI + `apps/recommendation-service/` bootstrap endpoint + dem
 | `overwrite-semantics/` | Bootstrap always overwrites `preference_vector`; UI is the guard against re-onboarding. |
 | `reset-clears-onboarding/` | Reset-demo clears `onboarded_at` atomically with likes/bookmarks/reco-profile wipe. |
 | `ownership-split/` | Demo owns `onboarded_at`; reco owns `preference_vector`; cohort class is derived at analysis time. |
+| `structured-output-shape/` | LLM bootstrap response carries `enrichment` with non-empty paragraph + non-empty genres; skip and dedup paths omit it. |
 
 ## Cross-repo parent rule
 
