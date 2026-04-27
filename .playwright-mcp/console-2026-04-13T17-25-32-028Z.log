@@ -1,0 +1,1612 @@
+[     543ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[     581ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3216369ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3216621ms] [LOG] [Fast Refresh] done in 278ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3421233ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3421394ms] [LOG] [Fast Refresh] done in 210ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3430918ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3430943ms] [LOG] [Fast Refresh] done in 96ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3431281ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3431348ms] [LOG] [Fast Refresh] done in 168ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3476083ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3476100ms] [LOG] [Fast Refresh] done in 81ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3485363ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3485392ms] [LOG] [Fast Refresh] done in 32ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3549155ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3549220ms] [LOG] [Fast Refresh] done in 87ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3549324ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 3549325ms] [LOG] [Fast Refresh] done in 102ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4451221ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4451306ms] [LOG] [Fast Refresh] done in 40ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4451513ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4451576ms] [LOG] [Fast Refresh] done in 165ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4455153ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4455185ms] [LOG] [Fast Refresh] done in 7ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4458539ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4458581ms] [LOG] [Fast Refresh] done in 8ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4465400ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4465447ms] [LOG] [Fast Refresh] done in 7ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4466603ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4466648ms] [LOG] [Fast Refresh] done in 9ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4473863ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4473891ms] [LOG] [Fast Refresh] done in 5ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4476335ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4476363ms] [LOG] [Fast Refresh] done in 5ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4481144ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4481183ms] [LOG] [Fast Refresh] done in 12ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4481285ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4481330ms] [LOG] [Fast Refresh] done in 145ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4488335ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4488393ms] [LOG] [Fast Refresh] done in 8ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4491788ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4491826ms] [LOG] [Fast Refresh] done in 7ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4627267ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 4627327ms] [LOG] [Fast Refresh] done in 11ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 5018594ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 5018622ms] [LOG] [Fast Refresh] done in 131ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 5138941ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 5139073ms] [LOG] [Fast Refresh] done in 199ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 5141507ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 5141532ms] [LOG] [Fast Refresh] done in 45ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 5149461ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 5149481ms] [LOG] [Fast Refresh] done in 78ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 5163718ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 5164011ms] [LOG] [Fast Refresh] done in 338ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6724847ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6724911ms] [LOG] [Fast Refresh] done in 175ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6727041ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6727172ms] [LOG] [Fast Refresh] done in 230ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6727302ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6727333ms] [LOG] [Fast Refresh] done in 132ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6729382ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6729693ms] [LOG] [Fast Refresh] done in 282ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6731469ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6731491ms] [LOG] [Fast Refresh] done in 124ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6740859ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6742142ms] [LOG] [Fast Refresh] done in 372ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6743214ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6743230ms] [LOG] [Fast Refresh] done in 116ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6744133ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6744163ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6752140ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6752498ms] [LOG] [Fast Refresh] done in 234ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6762086ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6762771ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:3272
+[ 6762894ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6763229ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:3272
+[ 6763238ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/feed?_rsc=14tp7:0
+[ 6763308ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/feed?_rsc=14tp7:0
+[ 6763368ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 6763411ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/feed:0
+[ 6763657ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0p2h_react-dom_0vsf22y._.js:15305
+[ 6763702ms] Error: ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./apps/demo/src/app/(app)/layout.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at Object.getCompilationErrors (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/next-dev-server.js:719:42)
+    at DevServer.findPageComponents (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/next-dev-server.js:689:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/base-server.js:1745:26)
+[ 6763695ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 6763717ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 6763720ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 6763753ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 6763865ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 6763917ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 6764765ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 6764830ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7115609ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7115613ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7121056ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7121060ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7124236ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7124272ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7124338ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7129453ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7129764ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7129764ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7129842ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7129842ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7129865ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7130050ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130050ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130096ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7130251ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130251ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130288ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130288ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130331ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130331ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130374ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130374ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130481ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130481ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130485ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7130535ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130535ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130589ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130589ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130638ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130638ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130684ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130684ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130741ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130741ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130786ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130786ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130825ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/feed:0
+[ 7130907ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0p2h_react-dom_0vsf22y._.js:15305
+[ 7130930ms] Error: ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route
+
+
+    at Object.getCompilationErrors (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1175:55)
+    at DevBundlerService.getCompilationError (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/next-dev-server.js:719:42)
+    at DevServer.findPageComponents (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/next-dev-server.js:689:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/base-server.js:1745:26)
+[ 7130929ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7130932ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130932ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130981ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7130981ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7131048ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7134853ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7134853ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7134909ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7139044ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7139044ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7139104ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7172153ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7176073ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/login: route at /api/auth/login/route and route at /(api)/api/auth/login/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176073ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/logout: route at /api/auth/logout/route and route at /(api)/api/auth/logout/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176073ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /auth/callback: route at /auth/callback/route and route at /(app)/auth/callback/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176073ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176073ms] [ERROR] ./apps/demo/src/app/auth
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/auth and /auth. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176073ms] [ERROR] ./apps/demo/src/app/feed
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/feed and /feed. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176073ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176155ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7176172ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/login: route at /api/auth/login/route and route at /(api)/api/auth/login/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176172ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/logout: route at /api/auth/logout/route and route at /(api)/api/auth/logout/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176172ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /auth/callback: route at /auth/callback/route and route at /(app)/auth/callback/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176172ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176172ms] [ERROR] ./apps/demo/src/app/auth
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/auth and /auth. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176172ms] [ERROR] ./apps/demo/src/app/feed
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/feed and /feed. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176172ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176264ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/login: route at /api/auth/login/route and route at /(api)/api/auth/login/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176264ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/logout: route at /api/auth/logout/route and route at /(api)/api/auth/logout/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176264ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /auth/callback: route at /auth/callback/route and route at /(app)/auth/callback/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176264ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176264ms] [ERROR] ./apps/demo/src/app/auth
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/auth and /auth. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176264ms] [ERROR] ./apps/demo/src/app/feed
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/feed and /feed. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176264ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176363ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/login: route at /api/auth/login/route and route at /(api)/api/auth/login/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176363ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/logout: route at /api/auth/logout/route and route at /(api)/api/auth/logout/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176363ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /auth/callback: route at /auth/callback/route and route at /(app)/auth/callback/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176363ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176363ms] [ERROR] ./apps/demo/src/app/auth
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/auth and /auth. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176363ms] [ERROR] ./apps/demo/src/app/feed
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/feed and /feed. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176363ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176365ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7176414ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/login: route at /api/auth/login/route and route at /(api)/api/auth/login/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176414ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/logout: route at /api/auth/logout/route and route at /(api)/api/auth/logout/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176414ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /auth/callback: route at /auth/callback/route and route at /(app)/auth/callback/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176414ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176414ms] [ERROR] ./apps/demo/src/app/auth
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/auth and /auth. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176414ms] [ERROR] ./apps/demo/src/app/feed
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/feed and /feed. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176414ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176457ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/feed:0
+[ 7176499ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0p2h_react-dom_0vsf22y._.js:15305
+[ 7176625ms] Error: ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/login: route at /api/auth/login/route and route at /(api)/api/auth/login/route
+
+
+    at Object.getCompilationErrors (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1175:55)
+    at DevBundlerService.getCompilationError (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/next-dev-server.js:719:42)
+    at DevServer.findPageComponents (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/next-dev-server.js:689:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/base-server.js:1745:26)
+[ 7176515ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7176547ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/login: route at /api/auth/login/route and route at /(api)/api/auth/login/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176547ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/logout: route at /api/auth/logout/route and route at /(api)/api/auth/logout/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176547ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /auth/callback: route at /auth/callback/route and route at /(app)/auth/callback/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176547ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176547ms] [ERROR] ./apps/demo/src/app/auth
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/auth and /auth. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176547ms] [ERROR] ./apps/demo/src/app/feed
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/feed and /feed. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176547ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176548ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/login: route at /api/auth/login/route and route at /(api)/api/auth/login/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176548ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/logout: route at /api/auth/logout/route and route at /(api)/api/auth/logout/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176548ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /auth/callback: route at /auth/callback/route and route at /(app)/auth/callback/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176548ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176548ms] [ERROR] ./apps/demo/src/app/auth
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/auth and /auth. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176548ms] [ERROR] ./apps/demo/src/app/feed
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/feed and /feed. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176548ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176576ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/login: route at /api/auth/login/route and route at /(api)/api/auth/login/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176576ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/logout: route at /api/auth/logout/route and route at /(api)/api/auth/logout/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176576ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /auth/callback: route at /auth/callback/route and route at /(app)/auth/callback/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176576ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176576ms] [ERROR] ./apps/demo/src/app/auth
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/auth and /auth. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176577ms] [ERROR] ./apps/demo/src/app/feed
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/feed and /feed. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176577ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176644ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7176892ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/login: route at /api/auth/login/route and route at /(api)/api/auth/login/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176892ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/logout: route at /api/auth/logout/route and route at /(api)/api/auth/logout/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176892ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /auth/callback: route at /auth/callback/route and route at /(app)/auth/callback/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176892ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176892ms] [ERROR] ./apps/demo/src/app/auth
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/auth and /auth. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176892ms] [ERROR] ./apps/demo/src/app/feed
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/feed and /feed. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176892ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7176955ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7177105ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/login: route at /api/auth/login/route and route at /(api)/api/auth/login/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7177106ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /api/auth/logout: route at /api/auth/logout/route and route at /(api)/api/auth/logout/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7177106ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /auth/callback: route at /auth/callback/route and route at /(app)/auth/callback/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7177106ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7177106ms] [ERROR] ./apps/demo/src/app/auth
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/auth and /auth. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7177106ms] [ERROR] ./apps/demo/src/app/feed
+You cannot have two parallel pages that resolve to the same path. Please check /(app)/feed and /feed. @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7177106ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7177173ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7178712ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7179522ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7179522ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7179744ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7179744ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7179819ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7179819ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7179864ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7179864ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7179908ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7179908ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7179950ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7179950ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7179999ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7179999ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180048ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180048ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180134ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180134ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180174ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180174ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180219ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180219ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180257ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180257ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180295ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180295ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180333ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180333ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180371ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180371ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180410ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180410ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180450ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180450ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180489ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180489ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180525ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180525ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180594ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180594ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180631ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180631ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180672ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180672ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180705ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180705ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180742ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180743ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180780ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180780ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180820ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180820ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180863ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180863ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180942ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180942ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180980ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7180981ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7181022ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7181022ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7181061ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7181061ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7181098ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7181098ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7181136ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7181136ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7181218ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7181218ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7181252ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/feed:0
+[ 7181281ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0p2h_react-dom_0vsf22y._.js:15305
+[ 7181314ms] Error: ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route
+
+
+    at Object.getCompilationErrors (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1175:55)
+    at DevBundlerService.getCompilationError (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/next-dev-server.js:719:42)
+    at DevServer.findPageComponents (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/next-dev-server.js:689:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/base-server.js:1745:26)
+[ 7181289ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7181295ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7181295ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7181360ms] [ERROR] ./apps/demo/src/app
+An issue occurred while preparing your Next.js app
+Conflicting routes at /reco/[[...route]]: route at /reco/[[...route]]/route and route at /(api)/reco/[[...route]]/route @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7181360ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7181400ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7204540ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7204582ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7204760ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7204808ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7204942ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7204945ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7204990ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7205033ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7205070ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7205105ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7205145ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7205214ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7205252ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7205287ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7205325ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7205360ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7205374ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/feed:0
+[ 7205444ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0p2h_react-dom_0vsf22y._.js:15305
+[ 7205459ms] Error: ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./apps/demo/src/app/(app)/layout.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at Object.getCompilationErrors (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/next-dev-server.js:719:42)
+    at DevServer.findPageComponents (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/next-dev-server.js:689:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/base-server.js:1745:26)
+[ 7205452ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7205462ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7205515ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7205558ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7205932ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7206002ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7210543ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7210611ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7223414ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed:  @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_client_06c~4gj._.js:2342
+[ 7224422ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_client_06c~4gj._.js:2342
+[ 7225424ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_client_06c~4gj._.js:2342
+[ 7226426ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_client_06c~4gj._.js:2342
+[ 7227429ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_client_06c~4gj._.js:2342
+[ 7228432ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_client_06c~4gj._.js:2342
+[ 7233441ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7233679ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/feed:0
+[ 7233698ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0p2h_react-dom_0vsf22y._.js:15305
+[ 7233704ms] Error: ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./apps/demo/src/app/(app)/layout.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at Object.getCompilationErrors (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/next-dev-server.js:719:42)
+    at DevServer.findPageComponents (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/dev/next-dev-server.js:689:43)
+    at async DevServer.renderErrorToResponseImpl (file:///Users/denissevcuk/Projects/sp/recommendation-personalization-system/node_modules/.pnpm/next@16.2.2_@babel+core@7.29.0_react-dom@19.2.4_react@19.2.4__react@19.2.4/node_modules/next/dist/server/base-server.js:1745:26)
+[ 7233707ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7233757ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7233790ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7233859ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7233941ms] [ERROR] ./apps/demo/src/app/(app)/layout.tsx:4:1
+Module not found: Can't resolve './globals.css'
+  2 | import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+  3 | import { Providers } from "@/shared/components/providers";
+> 4 | import "./globals.css";
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | const geistSans = Geist({
+  7 |   variable: "--font-geist-sans",
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1945
+[ 7273609ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7273951ms] [LOG] [Fast Refresh] done in 432ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7274141ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7274230ms] [LOG] [Fast Refresh] done in 191ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_09~yztw._.js:1226
+[ 7277241ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 7277255ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 7278814ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 7278976ms] [LOG] [Fast Refresh] done in 263ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 7279710ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431
+[ 7279830ms] [LOG] [Fast Refresh] done in 221ms @ http://localhost:3000/_next/static/chunks/0r_m_next_dist_13~aa_a._.js:2431

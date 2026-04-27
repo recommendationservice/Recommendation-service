@@ -2,17 +2,22 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"
 
 const mockEnrichPrompt = vi.fn()
 const mockGenerateEmbedding = vi.fn()
-const mockDbUpdate = vi.fn()
-const mockTxUpdate = vi.fn()
+const mockTxUpsert = vi.fn()
 const mockSelect = vi.fn()
 const mockTransaction = vi.fn()
 
 type TxLike = {
-  update: () => { set: () => { where: typeof mockTxUpdate } }
+  insert: () => {
+    values: (v: unknown) => { onConflictDoUpdate: (spec: unknown) => unknown }
+  }
 }
 
 const txMock: TxLike = {
-  update: () => ({ set: () => ({ where: mockTxUpdate }) }),
+  insert: () => ({
+    values: (v: unknown) => ({
+      onConflictDoUpdate: (spec: unknown) => mockTxUpsert({ values: v, spec }),
+    }),
+  }),
 }
 
 vi.mock("./gemini", () => ({
@@ -31,7 +36,6 @@ vi.mock("../db/client", () => ({
         where: () => ({ limit: () => mockSelect() }),
       }),
     }),
-    update: () => ({ set: () => ({ where: mockDbUpdate }) }),
   },
 }))
 
@@ -40,8 +44,7 @@ import { bootstrapUser } from "./bootstrap"
 beforeEach(() => {
   mockEnrichPrompt.mockReset()
   mockGenerateEmbedding.mockReset()
-  mockDbUpdate.mockReset().mockResolvedValue(undefined)
-  mockTxUpdate.mockReset().mockResolvedValue(undefined)
+  mockTxUpsert.mockReset().mockResolvedValue(undefined)
   mockSelect.mockReset().mockResolvedValue([])
   mockTransaction.mockReset().mockImplementation(async (cb) => cb(txMock))
 })
@@ -61,7 +64,7 @@ describe("bootstrapUser — Skip path (REQ-5, REQ-6)", () => {
 
   it("rawPrompt undefined → no row created in user_profiles (lazy creation, skip-semantics)", async () => {
     await bootstrapUser({ externalUserId: "u2", rawPrompt: undefined })
-    expect(mockTxUpdate).not.toHaveBeenCalled()
+    expect(mockTxUpsert).not.toHaveBeenCalled()
   })
 })
 
@@ -76,7 +79,7 @@ describe("bootstrapUser — LLM happy path (REQ-6, REQ-8)", () => {
     mockGenerateEmbedding.mockResolvedValue(new Array(1536).fill(0.1))
   })
 
-  it("calls enrichPrompt → generateEmbedding → DB UPDATE in order", async () => {
+  it("calls enrichPrompt → generateEmbedding → DB UPSERT in order", async () => {
     const order: string[] = []
     mockEnrichPrompt.mockImplementation(async () => {
       order.push("enrich")
@@ -91,12 +94,12 @@ describe("bootstrapUser — LLM happy path (REQ-6, REQ-8)", () => {
       order.push("embed")
       return new Array(1536).fill(0)
     })
-    mockTxUpdate.mockImplementation(async () => {
-      order.push("update")
+    mockTxUpsert.mockImplementation(async () => {
+      order.push("upsert")
     })
 
     await bootstrapUser({ externalUserId: "u1", rawPrompt: "ok" })
-    expect(order).toEqual(["enrich", "embed", "update"])
+    expect(order).toEqual(["enrich", "embed", "upsert"])
   })
 
   it("synthesizes canonical text (REQ-8): 'User enjoys ...' shape", async () => {
@@ -133,7 +136,7 @@ describe("bootstrapUser — atomicity (REQ-6, scale-review F1)", () => {
       bootstrapUser({ externalUserId: "u1", rawPrompt: "x" }),
     ).rejects.toThrow()
     expect(mockGenerateEmbedding).not.toHaveBeenCalled()
-    expect(mockTxUpdate).not.toHaveBeenCalled()
+    expect(mockTxUpsert).not.toHaveBeenCalled()
   })
 
   it("Embedding failure → no UPDATE", async () => {
@@ -147,7 +150,7 @@ describe("bootstrapUser — atomicity (REQ-6, scale-review F1)", () => {
     await expect(
       bootstrapUser({ externalUserId: "u1", rawPrompt: "x" }),
     ).rejects.toThrow()
-    expect(mockTxUpdate).not.toHaveBeenCalled()
+    expect(mockTxUpsert).not.toHaveBeenCalled()
   })
 
   it("external calls happen OUTSIDE transaction (scale-review F1 pool blackout fix)", async () => {
@@ -181,6 +184,29 @@ describe("bootstrapUser — atomicity (REQ-6, scale-review F1)", () => {
   })
 })
 
+describe("bootstrapUser — fresh user upsert (regression: NULL preference_vector after onboarding)", () => {
+  it("creates a row with preferenceVector when no profile exists", async () => {
+    mockEnrichPrompt.mockResolvedValue({
+      genres: ["drama"],
+      themes: [],
+      moods: ["dark"],
+      sample_titles: [],
+    })
+    const vector = new Array(1536).fill(0.42)
+    mockGenerateEmbedding.mockResolvedValue(vector)
+
+    await bootstrapUser({ externalUserId: "fresh-user", rawPrompt: "x" })
+
+    expect(mockTxUpsert).toHaveBeenCalledTimes(1)
+    const [{ values, spec }] = mockTxUpsert.mock.calls[0] as [
+      { values: { externalUserId: string; preferenceVector: number[] }; spec: { set: { preferenceVector: number[] } } },
+    ]
+    expect(values.externalUserId).toBe("fresh-user")
+    expect(values.preferenceVector).toBe(vector)
+    expect(spec.set.preferenceVector).toBe(vector)
+  })
+})
+
 describe("bootstrapUser — overwrite semantics (REQ-6, business rule)", () => {
   it("overwrites existing preference_vector for same externalUserId", async () => {
     mockSelect.mockResolvedValue([
@@ -199,7 +225,7 @@ describe("bootstrapUser — overwrite semantics (REQ-6, business rule)", () => {
     mockGenerateEmbedding.mockResolvedValue(new Array(1536).fill(0.9))
 
     await bootstrapUser({ externalUserId: "u1", rawPrompt: "x" })
-    expect(mockTxUpdate).toHaveBeenCalled()
+    expect(mockTxUpsert).toHaveBeenCalled()
   })
 })
 

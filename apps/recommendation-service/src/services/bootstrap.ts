@@ -60,12 +60,18 @@ async function shouldShortCircuit(externalUserId: string): Promise<boolean> {
   return !!recent?.preferenceVector && isWithinDedupWindow(recent.updatedAt)
 }
 
-async function persistVector(externalUserId: string, vector: number[]): Promise<void> {
+async function upsertPreferenceVector(externalUserId: string, vector: number[]): Promise<void> {
+  // Upsert because skip-semantics defers profile creation to first event.
+  // A fresh user who completes LLM onboarding before any event has no row yet,
+  // so a plain UPDATE silently no-ops and preference_vector stays NULL.
   await db.transaction(async (tx) => {
     await (tx as Tx)
-      .update(userProfiles)
-      .set({ preferenceVector: vector, lastActiveAt: sql`now()` })
-      .where(eq(userProfiles.externalUserId, externalUserId))
+      .insert(userProfiles)
+      .values({ externalUserId, preferenceVector: vector, lastActiveAt: sql`now()` })
+      .onConflictDoUpdate({
+        target: userProfiles.externalUserId,
+        set: { preferenceVector: vector, lastActiveAt: sql`now()` },
+      })
   })
 }
 
@@ -84,7 +90,7 @@ async function runLlmPath(input: { externalUserId: string; rawPrompt: string }):
   const enriched = await enrichPrompt(input.rawPrompt)
   const canonicalText = synthesizeCanonicalText(enriched)
   const vector = await generateEmbedding(canonicalText)
-  await persistVector(input.externalUserId, vector)
+  await upsertPreferenceVector(input.externalUserId, vector)
   return { preferenceVectorSet: true, enrichment: buildEnrichment(enriched, canonicalText) }
 }
 

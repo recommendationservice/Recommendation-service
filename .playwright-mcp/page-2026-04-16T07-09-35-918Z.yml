@@ -1,0 +1,29 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - generic [ref=e4]:
+        - heading "Рекомендації" [level=1] [ref=e5]
+        - paragraph [ref=e6]: Проєкт демонструє роботу сервісу персоналізованих рекомендацій на прикладі фільмів.
+        - separator [ref=e7]
+        - paragraph [ref=e8]: Демо проєкт реалізований для дипломної роботи по темі "Програмна система для формування персоналізованих рекомендацій контенту"
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - heading "Улюблені категорії" [level=3] [ref=e11]
+          - paragraph [ref=e12]: Які категорії фільмів вам будуть рекомендуватись частіше та з якими ви частіше взаʼємодіяли
+        - generic [ref=e18]:
+          - paragraph [ref=e20]: Привіт test1!
+          - button "Вийти" [ref=e21]
+    - main [ref=e22]:
+      - article [ref=e23]
+      - article [ref=e33]
+      - article [ref=e43]
+    - complementary [ref=e53]:
+      - generic [ref=e54]:
+        - heading "Логування" [level=1] [ref=e55]
+        - paragraph [ref=e56]: Логування необхідне для демонстрації системи рекомендацій, та як дії користувача впливають на неї
+        - separator [ref=e57]
+      - button "Скинути стан демо" [ref=e59]:
+        - img [ref=e60]
+        - text: Скинути стан демо
+  - button "Open Next.js Dev Tools" [ref=e68] [cursor=pointer]:
+    - img [ref=e69]
